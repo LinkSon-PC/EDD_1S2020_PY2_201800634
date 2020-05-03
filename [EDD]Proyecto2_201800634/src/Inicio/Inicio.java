@@ -7,6 +7,7 @@ package Inicio;
 
 import ARBOLB.ArbolB;
 import ARBOLB.Llave;
+import java.util.Random;
 import javax.swing.JFileChooser;
 
 /**
@@ -20,13 +21,19 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         ArbolB _arbol = new ArbolB();
-        for (int i = 26; i > 0; i--) {
-            _arbol.Agregar(new Llave(i, "", "SDF", "", 0, "", "", "", 0));
+        Random rnd = new Random();
+        for (int i = 0; i < 4; i++) {
+            _arbol.Agregar(new Llave(i , "", "SDF", "", 0, "", "", "", 0));
         }
-//        for (int i = 8; i > -1; i--) {
+        
+        _arbol.Eliminar(0);
+        _arbol.Eliminar(3);
+//        for (int i = 100; i > -1; i--) {
 //            _arbol.Agregar(new Llave(i, "", "SDF", "", 0, "", "", "", 0));
 //        }
 
+
+        System.out.println("IMPRIMIR ARBOL B");
         _arbol.GenerarDot();
 
         initComponents();

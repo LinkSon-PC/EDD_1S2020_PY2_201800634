@@ -30,7 +30,7 @@ public class ArbolB {
         }
     }
 
-    public Pagina AgregarPagina(Pagina _Pagina, Llave _Libro) {
+    private Pagina AgregarPagina(Pagina _Pagina, Llave _Libro) {
 
         //SI EL NODO RAIZ SUPERA EL LÍMITE
         if (AgregarLlave(_Pagina, _Libro)) {
@@ -38,24 +38,27 @@ public class ArbolB {
 
             //NUEVO NODO RAIZ
             Pagina _NuevoRaiz = new Pagina();
-            _NuevoRaiz.AgregarLibro(_Pagina.getLlave()[2]);
+            _NuevoRaiz.getLlave()[0] = _Pagina.getLlave()[2];
+            _NuevoRaiz.setK(1);
+            //_NuevoRaiz.AgregarLibro(_Pagina.getLlave()[2]);
 
             Pagina _Nuevo = new Pagina();
 
             _NuevoRaiz.getHijos()[1] = _Nuevo;
 
             //MOVER LAS LLAVES DE NODO A NUEVO NODO DERECHA
-            for (int k = 3; k < 5; k++) {
-                _Nuevo.AgregarLibro(_Pagina.getLlave()[k]);
-            }
+                _Nuevo.getLlave()[0] = _Pagina.getLlave()[3];
+                _Nuevo.getLlave()[1] = _Pagina.getLlave()[4];
+                _Nuevo.setK(2);
 
             //MOVER HIJOS DEL NODO RAIZ AL NUEVO NODO
-            for (int k = 0; k < 3; k++) {
-                _Nuevo.getHijos()[k] = _Pagina.getHijos()[k + 3];
-            }
+                _Nuevo.getHijos()[0] = _Pagina.getHijos()[3];
+                _Nuevo.getHijos()[1] = _Pagina.getHijos()[4];
+                _Nuevo.getHijos()[2] = _Pagina.getHijos()[5];
 
             //ELIMINA LLAVES DEL HIJO IZQUIERDO (QUE FUE DIVIDIDO)
             _NuevoRaiz.getHijos()[0] = _Pagina;
+            
             for (int k = 2; k < 5; k++) {
                 _Pagina.getLlave()[k] = null;
                 _Pagina.getHijos()[k + 1] = null;
@@ -70,7 +73,7 @@ public class ArbolB {
         return _Pagina;
     }
 
-    public boolean AgregarLlave(Pagina _Pagina, Llave _Libro) {
+    private boolean AgregarLlave(Pagina _Pagina, Llave _Libro) {
 
         //SI ES UN NODO HOJA
         if (_Pagina.VacioHijos()) {
@@ -100,8 +103,10 @@ public class ArbolB {
                     }
                 }
                 return false;
-            } else {
+            }
+            else {
 
+                //INSERTAR EN VALOR INTERMEDIO
                 for (int k = 0; k < _Pagina.getK() - 1; k++) {
                     if (_Pagina.getLlave()[k].MenorQue(_Libro.getISBM()) && _Pagina.getLlave()[k + 1].MayorQue(_Libro.getISBM())) {
 
@@ -125,6 +130,79 @@ public class ArbolB {
 
     }
 
+    
+    public void Eliminar(int _ISBM){
+        EliminarISBM(_ISBM, NodoRaíz);
+    }
+    
+    private void EliminarISBM(int _Valor, Pagina _Pagina){
+        //ELIMINAR EN NODO HOJA
+        if (_Pagina.VacioHijos()) {
+            
+            //BUSCAR LLAVE CON ISBM = _VALOR
+            for (int k = 0; k < _Pagina.getK(); k++) {
+                if(_Pagina.getLlave()[k].IgualQue(_Valor)){
+                    
+                    //CORRIMIENTO DE LLAVEZ A LA IZQUIERDA DE A PARTIR DE LA LLAVE QUE COINSIDA EL ISBM
+                    for (int i = k; i < _Pagina.getK(); i++) {
+                        _Pagina.getLlave()[i] = _Pagina.getLlave()[i+1];
+                    }
+                    
+                    //DISMINICUIÓN EN LA CONTIDAD DE LLAVES
+                    _Pagina.setK(_Pagina.getK() -1);
+                    
+                    System.out.println("NODO ELIMINADO ISBM:" + Integer.toString(_Valor));
+                    return;
+                }
+            }
+        } 
+
+//SI NO ES UN NODO
+        else {
+             //SI ES MENOR QUE LA PRIMERA LLAVE INSERTAR EN EL     PRIMER HIJO
+            if (_Pagina.getLlave()[0].MayorQue(_Valor)) {
+                
+                return;
+                
+            } //SI ES MAYOR QUE LA ULTIMA LLAVE INSERTADA  INSERTAR EN EL ULTIMO HIJO DISPONIBLE
+            else if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Valor)) {
+                
+                return ;
+                
+            }
+            else {
+                //BUSCAR VALOR ENTRE LLAVES DEL NODO
+                for (int k = 0; k < _Pagina.getK(); k++) {
+                    if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+                        _Pagina.getLlave()[k] = _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1];
+                    }
+                }
+                
+
+                //INSERTAR EN VALOR INTERMEDIO
+                for (int k = 0; k < _Pagina.getK() - 1; k++) {
+                    if (_Pagina.getLlave()[k].MenorQue(_Valor) && _Pagina.getLlave()[k + 1].MayorQue(_Valor)) {
+
+                        
+                        return;
+
+                    }
+                    if (_Pagina.getLlave()[k].MenorQue(_Valor) && _Pagina.getLlave()[k + 1].MayorQue(_Valor)) {
+
+                        
+                        return;
+
+                    } else if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+                        System.out.println("LIBRO YA REGISTRADO EN NODO");
+                        return;
+                    }
+                }
+            }
+        }
+
+        System.out.println("VALOR ISBM "+ Integer.toString(_Valor) + " NO ENCONTRADO");
+    }
+    
     public String toDot() {
         StringBuilder b = new StringBuilder();
 
