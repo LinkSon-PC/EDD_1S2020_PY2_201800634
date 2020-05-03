@@ -22,12 +22,15 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         ArbolB _arbol = new ArbolB();
         Random rnd = new Random();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             _arbol.Agregar(new Llave(i , "", "SDF", "", 0, "", "", "", 0));
         }
         
         _arbol.Eliminar(0);
         _arbol.Eliminar(3);
+        _arbol.Eliminar(6);
+        _arbol.Eliminar(8);
+        
 //        for (int i = 100; i > -1; i--) {
 //            _arbol.Agregar(new Llave(i, "", "SDF", "", 0, "", "", "", 0));
 //        }

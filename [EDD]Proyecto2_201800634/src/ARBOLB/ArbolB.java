@@ -137,7 +137,7 @@ public class ArbolB {
     
     private void EliminarISBM(int _Valor, Pagina _Pagina){
         //ELIMINAR EN NODO HOJA
-        if (_Pagina.VacioHijos()) {
+        if (_Pagina.VacioHijos()) {  
             
             //BUSCAR LLAVE CON ISBM = _VALOR
             for (int k = 0; k < _Pagina.getK(); k++) {
@@ -159,42 +159,37 @@ public class ArbolB {
 
 //SI NO ES UN NODO
         else {
+                for (int k = 0; k < _Pagina.getK(); k++) {
+                    if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+                        _Pagina.getLlave()[k] = _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1];
+                        _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1] = null;
+                        _Pagina.getHijos()[k].setK(_Pagina.getHijos()[k].getK()-1);
+                        return;
+                    }
+                }
+                
+                
              //SI ES MENOR QUE LA PRIMERA LLAVE INSERTAR EN EL     PRIMER HIJO
             if (_Pagina.getLlave()[0].MayorQue(_Valor)) {
-                
+                EliminarISBM(_Valor, _Pagina.getHijos()[0]);
                 return;
                 
             } //SI ES MAYOR QUE LA ULTIMA LLAVE INSERTADA  INSERTAR EN EL ULTIMO HIJO DISPONIBLE
             else if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Valor)) {
-                
+                EliminarISBM(_Valor, _Pagina.getHijos()[_Pagina.getK()]);
                 return ;
                 
             }
             else {
                 //BUSCAR VALOR ENTRE LLAVES DEL NODO
-                for (int k = 0; k < _Pagina.getK(); k++) {
-                    if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
-                        _Pagina.getLlave()[k] = _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1];
-                    }
-                }
                 
 
                 //INSERTAR EN VALOR INTERMEDIO
                 for (int k = 0; k < _Pagina.getK() - 1; k++) {
                     if (_Pagina.getLlave()[k].MenorQue(_Valor) && _Pagina.getLlave()[k + 1].MayorQue(_Valor)) {
-
-                        
+                        EliminarISBM(_Valor, _Pagina.getHijos()[k+1]);
                         return;
 
-                    }
-                    if (_Pagina.getLlave()[k].MenorQue(_Valor) && _Pagina.getLlave()[k + 1].MayorQue(_Valor)) {
-
-                        
-                        return;
-
-                    } else if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
-                        System.out.println("LIBRO YA REGISTRADO EN NODO");
-                        return;
                     }
                 }
             }
