@@ -47,18 +47,18 @@ public class ArbolB {
             _NuevoRaiz.getHijos()[1] = _Nuevo;
 
             //MOVER LAS LLAVES DE NODO A NUEVO NODO DERECHA
-                _Nuevo.getLlave()[0] = _Pagina.getLlave()[3];
-                _Nuevo.getLlave()[1] = _Pagina.getLlave()[4];
-                _Nuevo.setK(2);
+            _Nuevo.getLlave()[0] = _Pagina.getLlave()[3];
+            _Nuevo.getLlave()[1] = _Pagina.getLlave()[4];
+            _Nuevo.setK(2);
 
             //MOVER HIJOS DEL NODO RAIZ AL NUEVO NODO
-                _Nuevo.getHijos()[0] = _Pagina.getHijos()[3];
-                _Nuevo.getHijos()[1] = _Pagina.getHijos()[4];
-                _Nuevo.getHijos()[2] = _Pagina.getHijos()[5];
+            _Nuevo.getHijos()[0] = _Pagina.getHijos()[3];
+            _Nuevo.getHijos()[1] = _Pagina.getHijos()[4];
+            _Nuevo.getHijos()[2] = _Pagina.getHijos()[5];
 
             //ELIMINA LLAVES DEL HIJO IZQUIERDO (QUE FUE DIVIDIDO)
             _NuevoRaiz.getHijos()[0] = _Pagina;
-            
+
             for (int k = 2; k < 5; k++) {
                 _Pagina.getLlave()[k] = null;
                 _Pagina.getHijos()[k + 1] = null;
@@ -103,8 +103,7 @@ public class ArbolB {
                     }
                 }
                 return false;
-            }
-            else {
+            } else {
 
                 //INSERTAR EN VALOR INTERMEDIO
                 for (int k = 0; k < _Pagina.getK() - 1; k++) {
@@ -130,74 +129,59 @@ public class ArbolB {
 
     }
 
-    
-    public void Eliminar(int _ISBM){
+    public void Eliminar(int _ISBM) {
         EliminarISBM(_ISBM, NodoRaíz);
+
     }
-    
-    private void EliminarISBM(int _Valor, Pagina _Pagina){
+
+    private void EliminarISBM(int _Valor, Pagina _Pagina) {
         //ELIMINAR EN NODO HOJA
-        if (_Pagina.VacioHijos()) {  
-            
-            //BUSCAR LLAVE CON ISBM = _VALOR
+        if (_Pagina.VacioHijos()) {
             for (int k = 0; k < _Pagina.getK(); k++) {
-                if(_Pagina.getLlave()[k].IgualQue(_Valor)){
-                    
-                    //CORRIMIENTO DE LLAVEZ A LA IZQUIERDA DE A PARTIR DE LA LLAVE QUE COINSIDA EL ISBM
+                if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+
                     for (int i = k; i < _Pagina.getK(); i++) {
-                        _Pagina.getLlave()[i] = _Pagina.getLlave()[i+1];
+                        _Pagina.getLlave()[i] = _Pagina.getLlave()[i + 1];
                     }
-                    
-                    //DISMINICUIÓN EN LA CONTIDAD DE LLAVES
-                    _Pagina.setK(_Pagina.getK() -1);
-                    
-                    System.out.println("NODO ELIMINADO ISBM:" + Integer.toString(_Valor));
+                    _Pagina.setK(_Pagina.getK() - 1);
                     return;
                 }
             }
-        } 
+        } else {
 
-//SI NO ES UN NODO
-        else {
-                for (int k = 0; k < _Pagina.getK(); k++) {
-                    if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
-                        _Pagina.getLlave()[k] = _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1];
-                        _Pagina.getHijos()[k].getLlave()[_Pagina.getHijos()[k].getK()-1] = null;
-                        _Pagina.getHijos()[k].setK(_Pagina.getHijos()[k].getK()-1);
-                        return;
+            for (int k = 0; k < _Pagina.getK(); k++) {
+                if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+                    _Pagina.getLlave()[k] = _Pagina.getHijos()[k].TomarLlave_HijoIzq();
+                    
+                    if (_Pagina.getHijos()[k].getK() < 2) {
+                        _Pagina.Rebalanceo_Hoja(k);
                     }
+                    return;
+                } else if (_Pagina.getLlave()[k].MayorQue(_Valor)) {
+                    EliminarISBM(_Valor, _Pagina.getHijos()[k]);
+
+                    if (_Pagina.getHijos()[k].getK() < 2) {
+                        _Pagina.Rebalanceo_Hoja(k);
+                    }
+                    return;
                 }
-                
-                
-             //SI ES MENOR QUE LA PRIMERA LLAVE INSERTAR EN EL     PRIMER HIJO
-            if (_Pagina.getLlave()[0].MayorQue(_Valor)) {
-                EliminarISBM(_Valor, _Pagina.getHijos()[0]);
-                return;
-                
-            } //SI ES MAYOR QUE LA ULTIMA LLAVE INSERTADA  INSERTAR EN EL ULTIMO HIJO DISPONIBLE
-            else if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Valor)) {
-                EliminarISBM(_Valor, _Pagina.getHijos()[_Pagina.getK()]);
-                return ;
-                
             }
-            else {
-                //BUSCAR VALOR ENTRE LLAVES DEL NODO
-                
 
-                //INSERTAR EN VALOR INTERMEDIO
-                for (int k = 0; k < _Pagina.getK() - 1; k++) {
-                    if (_Pagina.getLlave()[k].MenorQue(_Valor) && _Pagina.getLlave()[k + 1].MayorQue(_Valor)) {
-                        EliminarISBM(_Valor, _Pagina.getHijos()[k+1]);
-                        return;
+            if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Valor)) {
+                EliminarISBM(_Valor, _Pagina.getHijos()[_Pagina.getK()]);
 
-                    }
+                if (_Pagina.getHijos()[_Pagina.getK()].getK() < 2) {
+                    _Pagina.Rebalanceo_Hoja(_Pagina.getK());
                 }
+                return;
+
             }
         }
 
-        System.out.println("VALOR ISBM "+ Integer.toString(_Valor) + " NO ENCONTRADO");
+        System.out.println("VALOR ISBM " + Integer.toString(_Valor) + " NO ENCONTRADO");
+
     }
-    
+
     public String toDot() {
         StringBuilder b = new StringBuilder();
 
