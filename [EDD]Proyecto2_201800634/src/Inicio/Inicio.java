@@ -22,22 +22,35 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         ArbolB _arbol = new ArbolB();
         Random rnd = new Random();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 9; i++) {
             _arbol.Agregar(new Llave(i , "", "SDF", "", 0, "", "", "", 0));
         }
-        
-        _arbol.Eliminar(2);
-        _arbol.Eliminar(17);
-        _arbol.Eliminar(29);
-        _arbol.Eliminar(28);
-        _arbol.Eliminar(8);
-        _arbol.Eliminar(19);
+                
 //        _arbol.Eliminar(0);
-//        _arbol.Eliminar(5);
+//        _arbol.Eliminar(17);
+//        _arbol.Eliminar(29);
+//        _arbol.Eliminar(28);
+//        _arbol.Eliminar(8);
+//        _arbol.Eliminar(0);
+//        _arbol.Eliminar(1);
+//        
+//        _arbol.Eliminar(9);
+//        _arbol.Eliminar(10);
+//        
+//        _arbol.Eliminar(11);
+//        
+//        System.out.println("ERROR");
+//        _arbol.Eliminar(18);
+//        _arbol.Eliminar(19);
+//        _arbol.Eliminar(2);
+//        _arbol.Eliminar(3);
         
-//        for (int i = 100; i > -1; i--) {
-//            _arbol.Agregar(new Llave(i, "", "SDF", "", 0, "", "", "", 0));
-//        }
+        for (int i = 7; i > -1; i--) {
+            _arbol.Eliminar(i);
+        }
+//        _arbol.Eliminar(42);
+//        _arbol.Eliminar(44);
+//        _arbol.Eliminar(48);
 
 
         System.out.println("IMPRIMIR ARBOL B");

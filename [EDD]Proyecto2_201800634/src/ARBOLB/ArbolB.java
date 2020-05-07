@@ -131,7 +131,10 @@ public class ArbolB {
 
     public void Eliminar(int _ISBM) {
         EliminarISBM(_ISBM, NodoRaíz);
-
+        if (NodoRaíz.getK() == 0) {
+            NodoRaíz = NodoRaíz.getHijos()[0];
+            this.Altura--;
+        }
     }
 
     private void EliminarISBM(int _Valor, Pagina _Pagina) {
@@ -139,6 +142,7 @@ public class ArbolB {
         if (_Pagina.VacioHijos()) {
             for (int k = 0; k < _Pagina.getK(); k++) {
                 if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
+                    System.out.println("ELIMINADO " + Integer.toString(_Pagina.getLlave()[k].getISBM()));
 
                     for (int i = k; i < _Pagina.getK(); i++) {
                         _Pagina.getLlave()[i] = _Pagina.getLlave()[i + 1];
@@ -151,17 +155,27 @@ public class ArbolB {
 
             for (int k = 0; k < _Pagina.getK(); k++) {
                 if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
-                    _Pagina.getLlave()[k] = _Pagina.getHijos()[k].TomarLlave_HijoIzq();
+                    _Pagina.getLlave()[k] = TomarLlave_HijoIzq(_Pagina.getHijos()[k]);
+
+                    Ordenar_HijoIzq(_Pagina);
                     
                     if (_Pagina.getHijos()[k].getK() < 2) {
-                        _Pagina.Rebalanceo_Hoja(k);
+                    _Pagina.Rebalanceo_Hoja(k);
+                        if (_Pagina.getK() == 0) {
+                            _Pagina = _Pagina.getHijos()[0];
+                        }
                     }
                     return;
-                } else if (_Pagina.getLlave()[k].MayorQue(_Valor)) {
+                }
+                
+                else if (_Pagina.getLlave()[k].MayorQue(_Valor)) {
                     EliminarISBM(_Valor, _Pagina.getHijos()[k]);
 
                     if (_Pagina.getHijos()[k].getK() < 2) {
-                        _Pagina.Rebalanceo_Hoja(k);
+                    _Pagina.Rebalanceo_Hoja(k);
+                        if (_Pagina.getK() == 0) {
+                            _Pagina = _Pagina.getHijos()[0];
+                        }
                     }
                     return;
                 }
@@ -172,13 +186,60 @@ public class ArbolB {
 
                 if (_Pagina.getHijos()[_Pagina.getK()].getK() < 2) {
                     _Pagina.Rebalanceo_Hoja(_Pagina.getK());
-                }
-                return;
+                        if (_Pagina.getK() == 0) {
+                            _Pagina = _Pagina.getHijos()[0];
+                        }
+                    }
 
             }
+
+            System.out.println("VALOR ISBM " + Integer.toString(_Valor) + " NO ENCONTRADO");
+
         }
 
-        System.out.println("VALOR ISBM " + Integer.toString(_Valor) + " NO ENCONTRADO");
+    }
+
+    public Llave TomarLlave_HijoIzq(Pagina _Pagina) {
+        if (_Pagina.VacioHijos()) {
+            //AUXILIAR PARA RETORNAR
+            Llave retorno = _Pagina.getLlave()[_Pagina.getK() - 1];
+
+            //BORRAR EL NODO DE LA HOJA
+            _Pagina.getLlave()[_Pagina.getK() - 1] = null;
+
+            //DISMINUSION DE LA CANTIDAD DE LLAVES EN EL NODO
+            _Pagina.setK(_Pagina.getK() - 1);
+            return retorno;
+        } else {
+            return TomarLlave_HijoIzq(_Pagina.getHijos()[_Pagina.getK()]);
+
+//            if (_Pagina.getHijos()[_Pagina.getK()].getK() < 2) {
+//                _Pagina.Rebalanceo_Hoja(_Pagina.getK());
+//
+//                if (_Pagina.getK() == 0) {
+//                    _Pagina = _Pagina.getHijos()[0];
+//                }
+//            }
+ 
+        }
+
+    }
+
+    public void Ordenar_HijoIzq(Pagina _Pagina) {
+        if (_Pagina.VacioHijos()) {
+
+        } else {
+            Ordenar_HijoIzq(_Pagina.getHijos()[_Pagina.getK()]);
+
+            if (_Pagina.getHijos()[_Pagina.getK()].getK() < 2) {
+                _Pagina.Rebalanceo_Hoja(_Pagina.getK());
+
+                if (_Pagina.getK() == 0) {
+                    _Pagina = _Pagina.getHijos()[0];
+                }
+            }
+//            
+        }
 
     }
 
@@ -187,7 +248,10 @@ public class ArbolB {
 
         b.append("digraph g { \n node [shape=record];\n");
 
+        if (this.NodoRaíz != null) {
         b.append(this.NodoRaíz.GenerarDot());
+            
+        }else  System.out.println("ARBOL VACÍO");
 
         b.append("}");
 
