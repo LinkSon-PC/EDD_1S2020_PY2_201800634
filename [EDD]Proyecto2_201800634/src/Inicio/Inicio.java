@@ -5,6 +5,7 @@
  */
 package Inicio;
 
+import ARBOLAVL.ArbolAVL;
 import ARBOLB.ArbolB;
 import ARBOLB.Llave;
 import java.util.Random;
@@ -20,41 +21,28 @@ public class Inicio extends javax.swing.JFrame {
      * Creates new form Inicio
      */
     public Inicio() {
-        ArbolB _arbol = new ArbolB();
-        Random rnd = new Random();
-        for (int i = 0; i < 9; i++) {
-            _arbol.Agregar(new Llave(i , "", "SDF", "", 0, "", "", "", 0));
-        }
-                
-//        _arbol.Eliminar(0);
-//        _arbol.Eliminar(17);
-//        _arbol.Eliminar(29);
-//        _arbol.Eliminar(28);
-//        _arbol.Eliminar(8);
-//        _arbol.Eliminar(0);
-//        _arbol.Eliminar(1);
-//        
-//        _arbol.Eliminar(9);
-//        _arbol.Eliminar(10);
-//        
-//        _arbol.Eliminar(11);
-//        
-//        System.out.println("ERROR");
-//        _arbol.Eliminar(18);
-//        _arbol.Eliminar(19);
-//        _arbol.Eliminar(2);
-//        _arbol.Eliminar(3);
+//        ArbolB _arbol = new ArbolB();
+//        Random rnd = new Random();
+//        for (int i = 0; i < 9; i++) {
+//            _arbol.Agregar(new Llave(i , "", "SDF", "", 0, "", "", "", 0));
+//        }
+//                
+//        for (int i = 7; i > -1; i--) {
+//            _arbol.Eliminar(i);
+//        }
+//
+//        System.out.println("IMPRIMIR ARBOL B");
+//        _arbol.GenerarDot();
+
+        ArbolAVL avl= new ArbolAVL();
+        avl.Insertar("a");
+        avl.Insertar("z");
+        avl.Insertar("s");
+        avl.Insertar("b");
+        avl.Insertar("m");
+        avl.Insertar("c");
         
-        for (int i = 7; i > -1; i--) {
-            _arbol.Eliminar(i);
-        }
-//        _arbol.Eliminar(42);
-//        _arbol.Eliminar(44);
-//        _arbol.Eliminar(48);
-
-
-        System.out.println("IMPRIMIR ARBOL B");
-        _arbol.GenerarDot();
+        avl.PreOrder(avl.getRaiz());
 
         initComponents();
     }
