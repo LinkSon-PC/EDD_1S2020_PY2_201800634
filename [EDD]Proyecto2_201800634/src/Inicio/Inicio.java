@@ -42,8 +42,12 @@ public class Inicio extends javax.swing.JFrame {
         avl.Insertar("m");
         avl.Insertar("c");
         
-        avl.PreOrder(avl.getRaiz());
+        System.out.println(Integer.toString("g".compareToIgnoreCase("h")));
+        System.out.println(Integer.toString("a".compareToIgnoreCase("g")));
+        
+        avl.InOrder(avl.getRaiz());
 
+        avl.GenerarDot();
         initComponents();
     }
 

@@ -16,11 +16,43 @@ public class Nodo {
     private Nodo izquierdo;
     private Nodo derecho;
 
+    private String InOrder;
+
     public Nodo(String _Categoria) {
         this.Categoria = _Categoria;
         this.FE = 0;
         this.izquierdo = null;
         this.derecho = null;
+    }
+
+    public String getDotName() {
+        return "Nodo" + this.hashCode();
+    }
+
+    public String GenerarDot() {
+        StringBuilder b = new StringBuilder();
+
+        b.append(InOrder(this,""));
+
+        return b.toString();
+
+    }
+
+    public String InOrder(Nodo _Nodo, String _Dot) {
+        if (_Nodo != null) {
+            String aux="";
+            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() + " \"] \n";
+            if (_Nodo.getIzquierdo() != null) {
+                aux += _Nodo.getDotName() + "->" + _Nodo.getIzquierdo().getDotName() + "\n";
+                aux +=InOrder(_Nodo.getIzquierdo(), aux);
+            }
+            if (_Nodo.getDerecho()!= null) {
+                aux += _Nodo.getDotName() + "->" + _Nodo.getDerecho().getDotName() + "\n";
+                aux +=InOrder(_Nodo.getDerecho(), aux);
+            }
+            return aux;
+        }
+        return "";
     }
 
     /**
@@ -79,5 +111,4 @@ public class Nodo {
         this.derecho = derecho;
     }
 
-    
 }
