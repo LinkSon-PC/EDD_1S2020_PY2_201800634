@@ -16,8 +16,7 @@ public class Nodo {
     private Nodo izquierdo;
     private Nodo derecho;
 
-    private String InOrder;
-
+    
     public Nodo(String _Categoria) {
         this.Categoria = _Categoria;
         this.FE = 0;
@@ -55,6 +54,12 @@ public class Nodo {
         return "";
     }
 
+    public boolean NoHijos(){
+        if (getDerecho()== null && getIzquierdo()==null) {
+            return true;
+        }
+        return false;
+    }
     /**
      * @return the Categoria
      */

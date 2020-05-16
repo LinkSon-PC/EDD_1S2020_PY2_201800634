@@ -8,8 +8,16 @@ package Inicio;
 import ARBOLAVL.ArbolAVL;
 import ARBOLB.ArbolB;
 import ARBOLB.Llave;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+//import java.text.ParseException;
 import java.util.Random;
 import javax.swing.JFileChooser;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -35,17 +43,44 @@ public class Inicio extends javax.swing.JFrame {
 //        _arbol.GenerarDot();
 
         ArbolAVL avl= new ArbolAVL();
-        avl.Insertar("a");
         avl.Insertar("z");
+        avl.Insertar("a");
         avl.Insertar("s");
         avl.Insertar("b");
         avl.Insertar("m");
         avl.Insertar("c");
+        avl.Insertar("w");
+        avl.Insertar("e");
+        avl.Insertar("n");
+        avl.Insertar("p");
+        avl.Insertar("o");
+        avl.Insertar("f");
+        avl.Insertar("v");
+        avl.Insertar("r");
+        avl.Insertar("y");
+        avl.Insertar("i");
+        avl.Insertar("ñ");
+        avl.Insertar("l");
+        
+//        avl.Eliminar("a");
+//        avl.Eliminar("l");
+//        avl.Eliminar("y");
+
+
+//        avl.Eliminar("z");
+//        avl.Eliminar("b");
+//        avl.Eliminar("s");
+//        avl.Eliminar("i");
+        avl.Eliminar("e");
+
+
+//        avl.Eliminar("w");
+//        avl.Eliminar("m");
         
         System.out.println(Integer.toString("g".compareToIgnoreCase("h")));
         System.out.println(Integer.toString("a".compareToIgnoreCase("g")));
         
-        avl.InOrder(avl.getRaiz());
+        avl.PreOrder(avl.getRaiz());
 
         avl.GenerarDot();
         initComponents();
@@ -131,6 +166,36 @@ public class Inicio extends javax.swing.JFrame {
 
         } catch (Exception e) {
         }
+    }
+    
+    
+    public void lerr(){
+        JSONParser parser = new JSONParser();
+        
+        try {
+            
+            Object obj = parser.parse(new FileReader("usuarios.json"));
+            JSONObject jsonObject = (JSONObject) obj;
+            System.out.println("JSON LEIDO: " + jsonObject);
+            
+            JSONArray array = (JSONArray) jsonObject.get("Usuarios");
+            System.out.println("");
+            
+            for(int i = 0 ; i < array.size() ; i++) {
+                JSONObject jsonObject1 = (JSONObject) array.get(i);
+                
+                System.out.println("DATOS DEL USUARIO: " + i);
+                System.out.println("ID: " + jsonObject1.get("id"));
+                System.out.println("Nombre: " + jsonObject1.get("nombre"));
+                System.out.println("Telefono: " + jsonObject1.get("telefono"));
+                System.out.println("Email: " + jsonObject1.get("email"));
+                
+                System.out.println("");
+            }
+            
+        } catch(FileNotFoundException e) { }
+        catch(IOException e) { }
+        catch (ParseException e){}
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

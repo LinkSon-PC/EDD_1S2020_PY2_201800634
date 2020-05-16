@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -47,7 +48,7 @@ public class ArbolAVL {
         if (_Nodo != null) {
 
             if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
-                System.out.println("NODO 1");
+//                System.out.println("NODO 1");
                 _Nodo.setDerecho(InsertarAVL(_Categoria, _Nodo.getDerecho()));
                 if ((Obtener_FE(_Nodo.getDerecho()) - Obtener_FE(_Nodo.getIzquierdo())) == 2) {
 
@@ -60,7 +61,7 @@ public class ArbolAVL {
                 }
             } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
 
-                System.out.println("NODO -1");
+//                System.out.println("NODO -1");
                 _Nodo.setIzquierdo(InsertarAVL(_Categoria, _Nodo.getIzquierdo()));
                 if ((Obtener_FE(_Nodo.getIzquierdo()) - Obtener_FE(_Nodo.getDerecho())) == 2) {
 
@@ -92,29 +93,225 @@ public class ArbolAVL {
 
     public void Eliminar(String _Categoría) {
         if (this.raiz != null) {
-            EliminarNodo(_Categoría, this.raiz);
-        }
-        else{
+            this.raiz = EliminarNodo(_Categoría, this.raiz);
+        } else {
             System.out.println("ARBOL AVL VACÍO");
         }
+        System.out.println("hola");
     }
 
-    public void EliminarNodo(String _Categoria, Nodo _Nodo) {
-        if (_Nodo.getDerecho() == null && _Nodo.getIzquierdo() == null) {
-            if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
-                _Nodo = null;
+    private Nodo EliminarNodo(String _Categoria, Nodo _Nodo) {
+        Nodo _Aux = _Nodo;
+        if (_Nodo != null) {
+            if (!_Nodo.NoHijos()) {
+                if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
+                    System.out.println("ELIMINAR NODO" + _Nodo.getCategoria());
+
+//                    if (_Nodo.getIzquierdo() != null) {
+//                        if (_Nodo.getIzquierdo().getDerecho() == null) {
+//                            _Aux = _Nodo.getIzquierdo();
+//                        } else {
+//
+//                            if (_Nodo.getIzquierdo().getDerecho().NoHijos()) {
+//                                _Aux = _Nodo.getIzquierdo().getDerecho();
+//                                _Nodo.getIzquierdo().setDerecho(null);
+//                            } else {
+//                                _Aux = Mayor_Izquierda(_Nodo.getIzquierdo().getDerecho());
+//                            }
+//                            
+//                            _Aux.setIzquierdo(_Nodo.getIzquierdo());
+//                        }
+//                        _Aux.setDerecho(_Nodo.getDerecho());
+//                        
+//                        
+//                    } else 
+                        if (_Nodo.getDerecho() != null) {
+
+                        if (_Nodo.getDerecho().getIzquierdo()== null) {
+                            _Aux = _Nodo.getDerecho();
+                        } else {
+
+                            if (_Nodo.getDerecho().getIzquierdo().NoHijos()) {
+                                _Aux = _Nodo.getDerecho().getIzquierdo();
+                                _Nodo.getDerecho().setIzquierdo(null);
+                            } else {
+                                _Aux = Menor_Derecha(_Nodo.getDerecho().getIzquierdo());
+                            }
+                            
+                            _Aux.setDerecho(_Nodo.getDerecho());
+                        }
+                        _Aux.setIzquierdo(_Nodo.getIzquierdo());
+                    }
+
+                } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
+//                    System.out.println("IZQUIERDA");
+                    _Aux.setIzquierdo(EliminarNodo(_Categoria, _Nodo.getIzquierdo()));
+                } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
+//                    System.out.println("DERECHA");
+                    _Aux.setDerecho(EliminarNodo(_Categoria, _Nodo.getDerecho()));
+                }
+
+                if (_Nodo.getIzquierdo() == null && _Nodo.getDerecho() != null) {
+                    _Aux.setFE(_Nodo.getDerecho().getFE() + 1);
+                } else if (_Nodo.getIzquierdo() != null && _Nodo.getDerecho() == null) {
+                    _Aux.setFE(_Nodo.getIzquierdo().getFE() + 1);
+                } else {
+                    _Aux.setFE(Math.max(Obtener_FE(_Nodo.getIzquierdo()), Obtener_FE(_Nodo.getDerecho())) + 1);
+                }
+
+            } else {
+                if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
+                    return null;
+                } else {
+                    return _Nodo;
+                }
             }
-        } else {
-            if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
-                
-            }
-            else if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) < 0) {
-                EliminarNodo(_Categoria, _Nodo.getIzquierdo());
-            }
-            else if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) > 0) {
-                EliminarNodo(_Categoria, _Nodo.getDerecho());
+
+            return Reajustar(_Aux);
+        }
+
+        return null;
+    }
+
+    private Nodo Mayor_Izquierda(Nodo _Nodo) {
+        Nodo _Aux = _Nodo;
+
+        if (_Nodo.getIzquierdo() != null && _Nodo.getDerecho() == null) {
+            _Nodo = _Nodo.getIzquierdo();
+        } else if (_Nodo.getDerecho() != null) {
+            if (_Nodo.getDerecho().NoHijos()) {
+                _Aux = _Nodo.getDerecho();
+                _Nodo.setDerecho(null);
+            } else {
+                _Aux = Mayor_Izquierda(_Nodo.getDerecho());
             }
         }
+
+        if (_Aux.getIzquierdo() == null && _Aux.getDerecho() != null) {
+            _Aux.setFE(_Nodo.getDerecho().getFE() + 1);
+        } else if (_Aux.getIzquierdo() != null && _Aux.getDerecho() == null) {
+            _Aux.setFE(_Nodo.getIzquierdo().getFE() + 1);
+        } else {
+            _Aux.setFE(Math.max(Obtener_FE(_Aux.getIzquierdo()), Obtener_FE(_Aux.getDerecho())) + 1);
+        }
+        return _Aux;
+    }
+
+    
+    private Nodo Menor_Derecha(Nodo _Nodo){
+        Nodo _Aux = _Nodo;
+
+        if (_Nodo.getIzquierdo() == null && _Nodo.getDerecho() != null) {
+            _Nodo = _Nodo.getIzquierdo();
+        } else if (_Nodo.getIzquierdo()!= null) {
+            if (_Nodo.getIzquierdo().NoHijos()) {
+                _Aux = _Nodo.getIzquierdo();
+                _Nodo.setIzquierdo(null);
+            } else {
+                _Aux = Menor_Derecha(_Nodo.getIzquierdo());
+            }
+        }
+
+        if (_Aux.getIzquierdo() == null && _Aux.getDerecho() != null) {
+            _Aux.setFE(_Nodo.getDerecho().getFE() + 1);
+        } else if (_Aux.getIzquierdo() != null && _Aux.getDerecho() == null) {
+            _Aux.setFE(_Nodo.getIzquierdo().getFE() + 1);
+        } else {
+            _Aux.setFE(Math.max(Obtener_FE(_Aux.getIzquierdo()), Obtener_FE(_Aux.getDerecho())) + 1);
+        }
+        return _Aux;
+    }
+//    private Nodo EliminarNodo(String _Categoria, Nodo _Nodo) {
+//        if (_Nodo.getDerecho() == null && _Nodo.getIzquierdo() == null) {
+//            if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
+//                System.out.println("ELIMNAR");
+//                return null;
+//            }
+//        } else {
+//            if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) == 0) {
+//                Nodo _Aux = Tomar_Hijo(_Nodo);
+//                _Aux.setDerecho(_Nodo.getDerecho());
+//                _Aux.setIzquierdo(_Nodo.getIzquierdo());
+//            return (_Aux);
+//            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
+//                System.out.println("IZQUIERDA");
+//                _Nodo.setIzquierdo(EliminarNodo(_Categoria, _Nodo.getIzquierdo()));
+//            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
+//                System.out.println("DERECHA");
+//                _Nodo.setDerecho(EliminarNodo(_Categoria, _Nodo.getDerecho()));
+//            }
+//        }
+//        return _Nodo;
+//    }
+//
+//    private Nodo Tomar_Hijo(Nodo _Nodo) {
+//        Nodo _Aux = _Nodo;
+//
+//        if (_Nodo.getIzquierdo() != null) {
+//            if (_Nodo.getIzquierdo().getDerecho() != null) {
+//                _Aux = RetornarMenor(_Nodo.getIzquierdo().getDerecho());
+////                _Aux.setIzquierdo(_Nodo.getIzquierdo());
+//            } else {
+//                _Aux = (_Nodo.getIzquierdo());
+//            }
+////            _Aux.setDerecho(_Nodo.getDerecho());
+//        } else if (_Nodo.getDerecho() != null) {
+//
+//        }
+//
+//                _Aux.setFE(Obtener_FE(_Aux));
+//        return (_Aux);
+//    }
+//
+//    public Nodo RetornarMenor(Nodo _Nodo) {
+//        Nodo _Aux = _Nodo;
+//        if (!_Nodo.NoHijos()) {
+//            if (_Nodo.getDerecho() != null) {
+//                _Aux = RetornarMenor(_Nodo.getDerecho());
+////                _Nodo = Reajustar(_Nodo);
+//                _Aux.setFE(Obtener_FE(_Aux));
+//
+//            } else if (_Nodo.getDerecho() == null && _Nodo.getIzquierdo() != null) {
+//                _Nodo = _Nodo.getIzquierdo();
+//                _Nodo.setFE(Obtener_FE(_Nodo));
+//            }
+//            return (_Aux);
+//
+//        } else {
+//            _Nodo = null;
+//            System.out.println("NODO RETORNADO " + _Aux.getCategoria());
+//            return (_Aux);
+//        }
+//    }
+    private Nodo Reajustar(Nodo _Nodo) {
+        Nodo _Aux = _Nodo;
+
+        if ((Obtener_FE(_Nodo.getDerecho()) - Obtener_FE(_Nodo.getIzquierdo())) == 2) {
+
+            if (_Nodo.getFE() > 0) {
+                _Aux = RSD(_Nodo);
+            } else {
+                _Aux = RDD(_Nodo);
+            }
+
+        }
+        if ((Obtener_FE(_Nodo.getIzquierdo()) - Obtener_FE(_Nodo.getDerecho())) == 2) {
+
+            if (_Nodo.getFE() < 0) {
+                _Aux = RSI(_Nodo);
+            } else {
+                _Aux = RDI(_Nodo);
+            }
+        }
+
+        if (_Nodo.getIzquierdo() == null && _Nodo.getDerecho() != null) {
+            _Nodo.setFE(_Nodo.getDerecho().getFE() + 1);
+        } else if (_Nodo.getIzquierdo() != null && _Nodo.getDerecho() == null) {
+            _Nodo.setFE(_Nodo.getIzquierdo().getFE() + 1);
+        } else {
+            _Nodo.setFE(Math.max(Obtener_FE(_Nodo.getIzquierdo()), Obtener_FE(_Nodo.getDerecho())) + 1);
+        }
+        return _Aux;
     }
 
     private int Obtener_FE(Nodo _Nodo) {
@@ -176,21 +373,23 @@ public class ArbolAVL {
 
     public void PostOrder(Nodo _Nodo) {
         if (_Nodo != null) {
-            InOrder(_Nodo.getIzquierdo());
-            InOrder(_Nodo.getDerecho());
+            PostOrder(_Nodo.getIzquierdo());
+            PostOrder(_Nodo.getDerecho());
             System.out.print(_Nodo.getCategoria() + "\t");
         }
     }
 
     private String toDot() {
         StringBuilder b = new StringBuilder();
-        
+
         b.append("digraph G { style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]");
 
         if (this.raiz != null) {
-        b.append(raiz.GenerarDot());
-            
-        }else  System.out.println("ARBOL VACÍO");
+            b.append(raiz.GenerarDot());
+
+        } else {
+            System.out.println("ARBOL VACÍO");
+        }
 
         b.append("}");
 
@@ -258,7 +457,7 @@ public class ArbolAVL {
         }
 
     }
-    
+
     /**
      * @return the raiz
      */
