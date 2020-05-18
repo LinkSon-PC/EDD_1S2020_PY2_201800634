@@ -1,0 +1,34 @@
+digraph G { style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]Nodo1623836374[label="m "] 
+Nodo1623836374->Nodo850015103
+Nodo850015103[label="f "] 
+Nodo850015103->Nodo29441213
+Nodo29441213[label="b "] 
+Nodo29441213->Nodo784423827
+Nodo784423827[label="a "] 
+Nodo29441213->Nodo9488363
+Nodo9488363[label="c "] 
+Nodo850015103->Nodo1673674061
+Nodo1673674061[label="i "] 
+Nodo1673674061->Nodo1810809180
+Nodo1810809180[label="l "] 
+Nodo1623836374->Nodo1331106417
+Nodo1331106417[label="p "] 
+Nodo1331106417->Nodo1233009647
+Nodo1233009647[label="n "] 
+Nodo1233009647->Nodo992235480
+Nodo992235480[label="o "] 
+Nodo1331106417->Nodo652053953
+Nodo652053953[label="w "] 
+Nodo652053953->Nodo1366218737
+Nodo1366218737[label="s "] 
+Nodo1366218737->Nodo1769422704
+Nodo1769422704[label="r "] 
+Nodo1366218737->Nodo1882519305
+Nodo1882519305[label="v "] 
+Nodo652053953->Nodo978181963
+Nodo978181963[label="z "] 
+Nodo978181963->Nodo498816684
+Nodo498816684[label="y "] 
+Nodo978181963->Nodo1298622164
+Nodo1298622164[label="ñ "] 
+}

@@ -107,24 +107,24 @@ public class ArbolAVL {
                 if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
                     System.out.println("ELIMINAR NODO" + _Nodo.getCategoria());
 
-//                    if (_Nodo.getIzquierdo() != null) {
-//                        if (_Nodo.getIzquierdo().getDerecho() == null) {
-//                            _Aux = _Nodo.getIzquierdo();
-//                        } else {
-//
-//                            if (_Nodo.getIzquierdo().getDerecho().NoHijos()) {
-//                                _Aux = _Nodo.getIzquierdo().getDerecho();
-//                                _Nodo.getIzquierdo().setDerecho(null);
-//                            } else {
-//                                _Aux = Mayor_Izquierda(_Nodo.getIzquierdo().getDerecho());
-//                            }
-//                            
-//                            _Aux.setIzquierdo(_Nodo.getIzquierdo());
-//                        }
-//                        _Aux.setDerecho(_Nodo.getDerecho());
-//                        
-//                        
-//                    } else 
+                    if (_Nodo.getIzquierdo() != null) {
+                        if (_Nodo.getIzquierdo().getDerecho() == null) {
+                            _Aux = _Nodo.getIzquierdo();
+                        } else {
+
+                            if (_Nodo.getIzquierdo().getDerecho().NoHijos()) {
+                                _Aux = _Nodo.getIzquierdo().getDerecho();
+                                _Nodo.getIzquierdo().setDerecho(null);
+                            } else {
+                                _Aux = Mayor_Izquierda(_Nodo.getIzquierdo().getDerecho());
+                            }
+                            
+                            _Aux.setIzquierdo(_Nodo.getIzquierdo());
+                        }
+                        _Aux.setDerecho(_Nodo.getDerecho());
+                        
+                        
+                    } else 
                         if (_Nodo.getDerecho() != null) {
 
                         if (_Nodo.getDerecho().getIzquierdo()== null) {
@@ -221,68 +221,7 @@ public class ArbolAVL {
         }
         return _Aux;
     }
-//    private Nodo EliminarNodo(String _Categoria, Nodo _Nodo) {
-//        if (_Nodo.getDerecho() == null && _Nodo.getIzquierdo() == null) {
-//            if (_Nodo.getCategoria().compareToIgnoreCase(_Categoria) == 0) {
-//                System.out.println("ELIMNAR");
-//                return null;
-//            }
-//        } else {
-//            if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) == 0) {
-//                Nodo _Aux = Tomar_Hijo(_Nodo);
-//                _Aux.setDerecho(_Nodo.getDerecho());
-//                _Aux.setIzquierdo(_Nodo.getIzquierdo());
-//            return (_Aux);
-//            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
-//                System.out.println("IZQUIERDA");
-//                _Nodo.setIzquierdo(EliminarNodo(_Categoria, _Nodo.getIzquierdo()));
-//            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
-//                System.out.println("DERECHA");
-//                _Nodo.setDerecho(EliminarNodo(_Categoria, _Nodo.getDerecho()));
-//            }
-//        }
-//        return _Nodo;
-//    }
-//
-//    private Nodo Tomar_Hijo(Nodo _Nodo) {
-//        Nodo _Aux = _Nodo;
-//
-//        if (_Nodo.getIzquierdo() != null) {
-//            if (_Nodo.getIzquierdo().getDerecho() != null) {
-//                _Aux = RetornarMenor(_Nodo.getIzquierdo().getDerecho());
-////                _Aux.setIzquierdo(_Nodo.getIzquierdo());
-//            } else {
-//                _Aux = (_Nodo.getIzquierdo());
-//            }
-////            _Aux.setDerecho(_Nodo.getDerecho());
-//        } else if (_Nodo.getDerecho() != null) {
-//
-//        }
-//
-//                _Aux.setFE(Obtener_FE(_Aux));
-//        return (_Aux);
-//    }
-//
-//    public Nodo RetornarMenor(Nodo _Nodo) {
-//        Nodo _Aux = _Nodo;
-//        if (!_Nodo.NoHijos()) {
-//            if (_Nodo.getDerecho() != null) {
-//                _Aux = RetornarMenor(_Nodo.getDerecho());
-////                _Nodo = Reajustar(_Nodo);
-//                _Aux.setFE(Obtener_FE(_Aux));
-//
-//            } else if (_Nodo.getDerecho() == null && _Nodo.getIzquierdo() != null) {
-//                _Nodo = _Nodo.getIzquierdo();
-//                _Nodo.setFE(Obtener_FE(_Nodo));
-//            }
-//            return (_Aux);
-//
-//        } else {
-//            _Nodo = null;
-//            System.out.println("NODO RETORNADO " + _Aux.getCategoria());
-//            return (_Aux);
-//        }
-//    }
+    
     private Nodo Reajustar(Nodo _Nodo) {
         Nodo _Aux = _Nodo;
 
