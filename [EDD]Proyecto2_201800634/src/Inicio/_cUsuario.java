@@ -876,6 +876,11 @@ public class _cUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Sesion._TablaHash.EliminarUsuario(Long.parseLong(_NCARNET.getText()));
+            if (Sesion._User.getCarnet() == Long.parseLong(_NCARNET.getText())) {
+                Sesion._User = null;
+            JOptionPane.showMessageDialog(null, "SESION DE CUENTA TERMINADA", "HABISO", JOptionPane.WARNING_MESSAGE);
+                this.dispose();
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "INGRESAR CARNET CORRECTO", "HABISO", JOptionPane.ERROR_MESSAGE);
         }
