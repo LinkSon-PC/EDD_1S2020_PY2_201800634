@@ -141,7 +141,7 @@ public class LOGIN extends javax.swing.JFrame {
                 if (Sesion._User.getPassword().compareTo(pass.getText()) == 0) {
                     _cUsuario user = new _cUsuario();
                     user.setVisible(true);
-                    this.dispose();
+//                    this.dispose();
                 } else {
                     Sesion._User = null;
                 }
