@@ -6,6 +6,7 @@
 package ARBOLB;
 
 import java.io.FileWriter;
+import java.util.LinkedList;
 
 /**
  *
@@ -243,6 +244,10 @@ public class ArbolB {
 
     }
 
+    public void Lista_Llaves(LinkedList<Llave>  _Lave){
+        this.NodoRaíz.Lista_Llave(_Lave);
+    }
+    
     public String toDot() {
         StringBuilder b = new StringBuilder();
 

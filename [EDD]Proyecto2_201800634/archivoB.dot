@@ -1,28 +1,26 @@
 digraph g { 
  node [shape=record];
-Nodo39363885[label="<P0>|10792
+Nodo526368492[label="<P0>|10792
 El cristianismo y las religiones de la Tierra
-Literatura|<P1>|10853
-Historia de la provincia de San Vicente de Chiapa y Guatemala de la orden de Predicadores
+Literatura|<P1>|10936
+Educación y vida
 Literatura|<P2>"];
-Nodo39363885:P0 -> Nodo1011777685;
-Nodo1011777685[label="<P0>|10790
+Nodo526368492:P0 -> Nodo1387774950;
+Nodo1387774950[label="<P0>|10790
 Pragmatismo y educación: su interpretación y crítica / John L. Childs.
 Literatura|<P1>|10791
 Historia de la etnología
 Literatura|<P2>"];
-Nodo39363885:P1 -> Nodo220402379;
-Nodo220402379[label="<P0>|10851
+Nodo526368492:P1 -> Nodo922638922;
+Nodo922638922[label="<P0>|10851
 Historia de la provincia de San Vicente de Chiapa y Guatemala de la orden de Predicadores
-Literatura|<P1>|10852
+Literatura|<P1>|10853
 Historia de la provincia de San Vicente de Chiapa y Guatemala de la orden de Predicadores
 Literatura|<P2>"];
-Nodo39363885:P2 -> Nodo384085442;
-Nodo384085442[label="<P0>|10936
-Educación y vida
-Literatura|<P1>|10937
+Nodo526368492:P2 -> Nodo328942046;
+Nodo328942046[label="<P0>|10937
 Lo que España llevó a América
-Literatura|<P2>|10938
+Literatura|<P1>|10938
 Desarrollo organizacional : estrategias de interrelación humana para el desarrollo de organizaciones v 1 Desarrollo organizacional: su naturaleza, sus orígenes y perspectivas
-Literatura|<P3>"];
+Literatura|<P2>"];
 }

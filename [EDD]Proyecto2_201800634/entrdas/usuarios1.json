@@ -1,0 +1,703 @@
+{
+	"Usuarios": [{
+			"Carnet": 201565500,
+			"Nombre": "Dennet",
+			"Apellido": "Robrose",
+			"Carrera": "Sistemas",
+			"Password": "vETeVZ5"
+		},
+		{
+			"Carnet": 201565501,
+			"Nombre": "Ethelred",
+			"Apellido": "Llewellen",
+			"Carrera": "Sistemas",
+			"Password": "lqMNjopX"
+		},
+		{
+			"Carnet": 201565502,
+			"Nombre": "Fenelia",
+			"Apellido": "Thrasher",
+			"Carrera": "Sistemas",
+			"Password": "VBwdEAVDhwKd"
+		},
+		{
+			"Carnet": 201565503,
+			"Nombre": "Courtney",
+			"Apellido": "Bracher",
+			"Carrera": "Sistemas",
+			"Password": "K9XKUhq4"
+		},
+		{
+			"Carnet": 201565504,
+			"Nombre": "Janina",
+			"Apellido": "O'Driscoll",
+			"Carrera": "Sistemas",
+			"Password": "i5GiKHiVR"
+		},
+		{
+			"Carnet": 201565505,
+			"Nombre": "Robinetta",
+			"Apellido": "Inett",
+			"Carrera": "Sistemas",
+			"Password": "usch3e"
+		},
+		{
+			"Carnet": 201565506,
+			"Nombre": "Giustina",
+			"Apellido": "Oliveto",
+			"Carrera": "Sistemas",
+			"Password": "APtJEYt7"
+		},
+		{
+			"Carnet": 201565507,
+			"Nombre": "Kary",
+			"Apellido": "Moppett",
+			"Carrera": "Sistemas",
+			"Password": "CZ1VyCTgw"
+		},
+		{
+			"Carnet": 201565508,
+			"Nombre": "Chelsie",
+			"Apellido": "Lesek",
+			"Carrera": "Sistemas",
+			"Password": "0EzyvMC"
+		},
+		{
+			"Carnet": 201565509,
+			"Nombre": "Briana",
+			"Apellido": "Fortye",
+			"Carrera": "Sistemas",
+			"Password": "jpuKBRxCl3u"
+		},
+		{
+			"Carnet": 201565510,
+			"Nombre": "Anastasia",
+			"Apellido": "Ferryn",
+			"Carrera": "Sistemas",
+			"Password": "o5jVo5QY"
+		},
+		{
+			"Carnet": 201565511,
+			"Nombre": "Odelinda",
+			"Apellido": "Silcocks",
+			"Carrera": "Sistemas",
+			"Password": "u8WFikL3DiQ1"
+		},
+		{
+			"Carnet": 201565512,
+			"Nombre": "Kilian",
+			"Apellido": "Probyn",
+			"Carrera": "Sistemas",
+			"Password": "91jDeV1X0"
+		},
+		{
+			"Carnet": 201565513,
+			"Nombre": "Irena",
+			"Apellido": "Batie",
+			"Carrera": "Sistemas",
+			"Password": "o9g65qhPF"
+		},
+		{
+			"Carnet": 201565514,
+			"Nombre": "Lura",
+			"Apellido": "Bulford",
+			"Carrera": "Sistemas",
+			"Password": "xj9Sl74MrV"
+		},
+		{
+			"Carnet": 201565515,
+			"Nombre": "Raychel",
+			"Apellido": "Tennick",
+			"Carrera": "Sistemas",
+			"Password": "FxRNA1d"
+		},
+		{
+			"Carnet": 201565516,
+			"Nombre": "Brandy",
+			"Apellido": "Milmore",
+			"Carrera": "Sistemas",
+			"Password": "tELmm6JN"
+		},
+		{
+			"Carnet": 201565517,
+			"Nombre": "Maud",
+			"Apellido": "Rohlfing",
+			"Carrera": "Sistemas",
+			"Password": "t2aHSU"
+		},
+		{
+			"Carnet": 201565518,
+			"Nombre": "Ginger",
+			"Apellido": "Packwood",
+			"Carrera": "Sistemas",
+			"Password": "mQXYK7yzXpR"
+		},
+		{
+			"Carnet": 201565519,
+			"Nombre": "Penn",
+			"Apellido": "Gasking",
+			"Carrera": "Sistemas",
+			"Password": "IW81t0tPO2"
+		},
+		{
+			"Carnet": 201565520,
+			"Nombre": "Reyna",
+			"Apellido": "Fearneley",
+			"Carrera": "Sistemas",
+			"Password": "mqoLLTLnwLP"
+		},
+		{
+			"Carnet": 201565521,
+			"Nombre": "Bartlett",
+			"Apellido": "Sparkwell",
+			"Carrera": "Sistemas",
+			"Password": "4iJmdja"
+		},
+		{
+			"Carnet": 201565522,
+			"Nombre": "Lishe",
+			"Apellido": "Melbourne",
+			"Carrera": "Sistemas",
+			"Password": "9kCUJ9ZTmZ"
+		},
+		{
+			"Carnet": 201565523,
+			"Nombre": "Simon",
+			"Apellido": "Linthead",
+			"Carrera": "Sistemas",
+			"Password": "KqGr46rghX0H"
+		},
+		{
+			"Carnet": 201565524,
+			"Nombre": "Fran",
+			"Apellido": "Domeney",
+			"Carrera": "Sistemas",
+			"Password": "8IW6T2"
+		},
+		{
+			"Carnet": 201565525,
+			"Nombre": "Chic",
+			"Apellido": "Skeemer",
+			"Carrera": "Sistemas",
+			"Password": "3SllBME"
+		},
+		{
+			"Carnet": 201565526,
+			"Nombre": "Kali",
+			"Apellido": "Haine",
+			"Carrera": "Sistemas",
+			"Password": "KkuccodVnr"
+		},
+		{
+			"Carnet": 201565527,
+			"Nombre": "Morly",
+			"Apellido": "Begley",
+			"Carrera": "Sistemas",
+			"Password": "NEuc9kp"
+		},
+		{
+			"Carnet": 201565528,
+			"Nombre": "Ludovico",
+			"Apellido": "Kowalski",
+			"Carrera": "Sistemas",
+			"Password": "FWJLdcm"
+		},
+		{
+			"Carnet": 201565529,
+			"Nombre": "Griffie",
+			"Apellido": "Valadez",
+			"Carrera": "Sistemas",
+			"Password": "0ArMcuchovMx"
+		},
+		{
+			"Carnet": 201565530,
+			"Nombre": "Augusto",
+			"Apellido": "Arunowicz",
+			"Carrera": "Sistemas",
+			"Password": "SI9ivh"
+		},
+		{
+			"Carnet": 201565531,
+			"Nombre": "Yankee",
+			"Apellido": "Stud",
+			"Carrera": "Sistemas",
+			"Password": "JJ7ZynpDKa"
+		},
+		{
+			"Carnet": 201565532,
+			"Nombre": "Herman",
+			"Apellido": "Tallet",
+			"Carrera": "Sistemas",
+			"Password": "UfwTGHEZ"
+		},
+		{
+			"Carnet": 201565533,
+			"Nombre": "Rosabelle",
+			"Apellido": "Barti",
+			"Carrera": "Sistemas",
+			"Password": "qi2tjLlKJmws"
+		},
+		{
+			"Carnet": 201565534,
+			"Nombre": "Rorke",
+			"Apellido": "McKimm",
+			"Carrera": "Sistemas",
+			"Password": "3Hiq1rr"
+		},
+		{
+			"Carnet": 201565535,
+			"Nombre": "Mamie",
+			"Apellido": "Theze",
+			"Carrera": "Sistemas",
+			"Password": "P57S7hKlk6"
+		},
+		{
+			"Carnet": 201565536,
+			"Nombre": "Kendra",
+			"Apellido": "Gumby",
+			"Carrera": "Sistemas",
+			"Password": "QYhH7fpDvP"
+		},
+		{
+			"Carnet": 201565537,
+			"Nombre": "Noah",
+			"Apellido": "Zorzi",
+			"Carrera": "Sistemas",
+			"Password": "PtM86Kx9L"
+		},
+		{
+			"Carnet": 201565538,
+			"Nombre": "Amory",
+			"Apellido": "Dowdall",
+			"Carrera": "Sistemas",
+			"Password": "CnQeMzBlT"
+		},
+		{
+			"Carnet": 201565539,
+			"Nombre": "Kat",
+			"Apellido": "Calendar",
+			"Carrera": "Sistemas",
+			"Password": "xEYGpBi6jCpz"
+		},
+		{
+			"Carnet": 201565540,
+			"Nombre": "Melamie",
+			"Apellido": "Antwis",
+			"Carrera": "Sistemas",
+			"Password": "2KiPra91b"
+		},
+		{
+			"Carnet": 201565541,
+			"Nombre": "Chaim",
+			"Apellido": "Bim",
+			"Carrera": "Sistemas",
+			"Password": "hzWF4kBz5"
+		},
+		{
+			"Carnet": 201565542,
+			"Nombre": "Andrei",
+			"Apellido": "Dod",
+			"Carrera": "Sistemas",
+			"Password": "68HkH9ar"
+		},
+		{
+			"Carnet": 201565543,
+			"Nombre": "Alexandros",
+			"Apellido": "Di Gregorio",
+			"Carrera": "Sistemas",
+			"Password": "3lEbM7V"
+		},
+		{
+			"Carnet": 201565544,
+			"Nombre": "Valerie",
+			"Apellido": "Snowsill",
+			"Carrera": "Sistemas",
+			"Password": "RzS388V4"
+		},
+		{
+			"Carnet": 201565545,
+			"Nombre": "Kirby",
+			"Apellido": "Tiron",
+			"Carrera": "Sistemas",
+			"Password": "K4Xbth1QI"
+		},
+		{
+			"Carnet": 201565546,
+			"Nombre": "Eamon",
+			"Apellido": "Sindle",
+			"Carrera": "Sistemas",
+			"Password": "35qohZQwJ"
+		},
+		{
+			"Carnet": 201565547,
+			"Nombre": "Leigha",
+			"Apellido": "Pinckard",
+			"Carrera": "Sistemas",
+			"Password": "QrtBBeAhI7K"
+		},
+		{
+			"Carnet": 201565548,
+			"Nombre": "Lucretia",
+			"Apellido": "Swapp",
+			"Carrera": "Sistemas",
+			"Password": "GaQJKqecyl"
+		},
+		{
+			"Carnet": 201565549,
+			"Nombre": "Griffie",
+			"Apellido": "Leall",
+			"Carrera": "Sistemas",
+			"Password": "Wfr8HIwZ"
+		},
+		{
+			"Carnet": 201565550,
+			"Nombre": "Ivor",
+			"Apellido": "Clows",
+			"Carrera": "Sistemas",
+			"Password": "8gNedc5ehKg"
+		},
+		{
+			"Carnet": 201565551,
+			"Nombre": "Gaynor",
+			"Apellido": "Hassard",
+			"Carrera": "Sistemas",
+			"Password": "4steZiwpTPS"
+		},
+		{
+			"Carnet": 201565552,
+			"Nombre": "Kally",
+			"Apellido": "Ellesworth",
+			"Carrera": "Sistemas",
+			"Password": "KOQPqu"
+		},
+		{
+			"Carnet": 201565553,
+			"Nombre": "Tricia",
+			"Apellido": "Giacobo",
+			"Carrera": "Sistemas",
+			"Password": "zo9my426"
+		},
+		{
+			"Carnet": 201565554,
+			"Nombre": "Aridatha",
+			"Apellido": "Stockill",
+			"Carrera": "Sistemas",
+			"Password": "7A6T3GltF6G"
+		},
+		{
+			"Carnet": 201565555,
+			"Nombre": "Valentine",
+			"Apellido": "Shmyr",
+			"Carrera": "Sistemas",
+			"Password": "fA4v09Rp8EvY"
+		},
+		{
+			"Carnet": 201565556,
+			"Nombre": "Ekaterina",
+			"Apellido": "Gounel",
+			"Carrera": "Sistemas",
+			"Password": "onYxNX"
+		},
+		{
+			"Carnet": 201565557,
+			"Nombre": "Felix",
+			"Apellido": "Ozanne",
+			"Carrera": "Sistemas",
+			"Password": "XcquCweT5"
+		},
+		{
+			"Carnet": 201565558,
+			"Nombre": "Evered",
+			"Apellido": "Coulthard",
+			"Carrera": "Sistemas",
+			"Password": "fymUpXMvR"
+		},
+		{
+			"Carnet": 201565559,
+			"Nombre": "Thorin",
+			"Apellido": "Gegg",
+			"Carrera": "Sistemas",
+			"Password": "dWLIJu"
+		},
+		{
+			"Carnet": 201565560,
+			"Nombre": "Gerik",
+			"Apellido": "Kneath",
+			"Carrera": "Sistemas",
+			"Password": "36eqYneC"
+		},
+		{
+			"Carnet": 201565561,
+			"Nombre": "Gilberto",
+			"Apellido": "Cale",
+			"Carrera": "Sistemas",
+			"Password": "0Ur3kJLh"
+		},
+		{
+			"Carnet": 201565562,
+			"Nombre": "Ham",
+			"Apellido": "Ireson",
+			"Carrera": "Sistemas",
+			"Password": "WhcNmGwzx"
+		},
+		{
+			"Carnet": 201565563,
+			"Nombre": "Leeland",
+			"Apellido": "Lapish",
+			"Carrera": "Sistemas",
+			"Password": "IZJCO6ig"
+		},
+		{
+			"Carnet": 201565564,
+			"Nombre": "Hort",
+			"Apellido": "Brandsen",
+			"Carrera": "Sistemas",
+			"Password": "aL5CeRwXj7pj"
+		},
+		{
+			"Carnet": 201565565,
+			"Nombre": "Eustacia",
+			"Apellido": "Kenn",
+			"Carrera": "Sistemas",
+			"Password": "wsZhNl"
+		},
+		{
+			"Carnet": 201565566,
+			"Nombre": "Zeke",
+			"Apellido": "Winley",
+			"Carrera": "Sistemas",
+			"Password": "pbzX8h"
+		},
+		{
+			"Carnet": 201565567,
+			"Nombre": "Phyllida",
+			"Apellido": "Riddoch",
+			"Carrera": "Sistemas",
+			"Password": "F31TTKrQwaE"
+		},
+		{
+			"Carnet": 201565568,
+			"Nombre": "Clarinda",
+			"Apellido": "Etty",
+			"Carrera": "Sistemas",
+			"Password": "vOIvFNxN"
+		},
+		{
+			"Carnet": 201565569,
+			"Nombre": "Glenn",
+			"Apellido": "Benediktsson",
+			"Carrera": "Sistemas",
+			"Password": "7nhCfRpyhF"
+		},
+		{
+			"Carnet": 201565570,
+			"Nombre": "Stevie",
+			"Apellido": "Mouan",
+			"Carrera": "Sistemas",
+			"Password": "z4WhZpv2ipf"
+		},
+		{
+			"Carnet": 201565571,
+			"Nombre": "Imojean",
+			"Apellido": "Ryles",
+			"Carrera": "Sistemas",
+			"Password": "al5ru4K65"
+		},
+		{
+			"Carnet": 201565572,
+			"Nombre": "Malchy",
+			"Apellido": "Andreone",
+			"Carrera": "Sistemas",
+			"Password": "gYzgw4nTi"
+		},
+		{
+			"Carnet": 201565573,
+			"Nombre": "Fransisco",
+			"Apellido": "McGuinley",
+			"Carrera": "Sistemas",
+			"Password": "MQLpJpwY"
+		},
+		{
+			"Carnet": 201565574,
+			"Nombre": "Charyl",
+			"Apellido": "Juniper",
+			"Carrera": "Sistemas",
+			"Password": "3Z4VqJVKc7"
+		},
+		{
+			"Carnet": 201565575,
+			"Nombre": "Ash",
+			"Apellido": "Robertucci",
+			"Carrera": "Sistemas",
+			"Password": "E2Im4kxex6Y"
+		},
+		{
+			"Carnet": 201565576,
+			"Nombre": "Pavia",
+			"Apellido": "Perroni",
+			"Carrera": "Sistemas",
+			"Password": "jt072A"
+		},
+		{
+			"Carnet": 201565577,
+			"Nombre": "Clevie",
+			"Apellido": "Lavell",
+			"Carrera": "Sistemas",
+			"Password": "Y0YntHjW"
+		},
+		{
+			"Carnet": 201565578,
+			"Nombre": "Marje",
+			"Apellido": "Laverack",
+			"Carrera": "Sistemas",
+			"Password": "W53NghVoN"
+		},
+		{
+			"Carnet": 201565579,
+			"Nombre": "Aylmar",
+			"Apellido": "Northill",
+			"Carrera": "Sistemas",
+			"Password": "FkUC29"
+		},
+		{
+			"Carnet": 201565580,
+			"Nombre": "Evangeline",
+			"Apellido": "Briamo",
+			"Carrera": "Sistemas",
+			"Password": "vy1VyHM"
+		},
+		{
+			"Carnet": 201565581,
+			"Nombre": "Baryram",
+			"Apellido": "MacPhee",
+			"Carrera": "Sistemas",
+			"Password": "2Qq0UWoEK2"
+		},
+		{
+			"Carnet": 201565582,
+			"Nombre": "Veda",
+			"Apellido": "Scrancher",
+			"Carrera": "Sistemas",
+			"Password": "OdEItL0E614"
+		},
+		{
+			"Carnet": 201565583,
+			"Nombre": "Hendrik",
+			"Apellido": "Neil",
+			"Carrera": "Sistemas",
+			"Password": "FZ2r0b8iDDen"
+		},
+		{
+			"Carnet": 201565584,
+			"Nombre": "Elvera",
+			"Apellido": "Cloughton",
+			"Carrera": "Sistemas",
+			"Password": "DrMWh9b6kw4"
+		},
+		{
+			"Carnet": 201565585,
+			"Nombre": "Dov",
+			"Apellido": "Crab",
+			"Carrera": "Sistemas",
+			"Password": "9wt8xD2C4"
+		},
+		{
+			"Carnet": 201565586,
+			"Nombre": "Corri",
+			"Apellido": "Spurier",
+			"Carrera": "Sistemas",
+			"Password": "ZuUsDWFUTA2Q"
+		},
+		{
+			"Carnet": 201565587,
+			"Nombre": "Kelli",
+			"Apellido": "Keating",
+			"Carrera": "Sistemas",
+			"Password": "vSMFAu"
+		},
+		{
+			"Carnet": 201565588,
+			"Nombre": "Staci",
+			"Apellido": "Mallan",
+			"Carrera": "Sistemas",
+			"Password": "MoSAS6EP5"
+		},
+		{
+			"Carnet": 201565589,
+			"Nombre": "Misha",
+			"Apellido": "Giabuzzi",
+			"Carrera": "Sistemas",
+			"Password": "cQ2a3HDL"
+		},
+		{
+			"Carnet": 201565590,
+			"Nombre": "Herold",
+			"Apellido": "McCrann",
+			"Carrera": "Sistemas",
+			"Password": "ONdI8PifBFm4"
+		},
+		{
+			"Carnet": 201565591,
+			"Nombre": "Dallis",
+			"Apellido": "Gouck",
+			"Carrera": "Sistemas",
+			"Password": "MezkzZ6hs0I7"
+		},
+		{
+			"Carnet": 201565592,
+			"Nombre": "Taber",
+			"Apellido": "Sebert",
+			"Carrera": "Sistemas",
+			"Password": "QeJ7Bfp"
+		},
+		{
+			"Carnet": 201565593,
+			"Nombre": "Germain",
+			"Apellido": "Wortley",
+			"Carrera": "Sistemas",
+			"Password": "IloJNCwABVvc"
+		},
+		{
+			"Carnet": 201565594,
+			"Nombre": "Benoit",
+			"Apellido": "Jervis",
+			"Carrera": "Sistemas",
+			"Password": "XbL1F5J"
+		},
+		{
+			"Carnet": 201565595,
+			"Nombre": "Uriel",
+			"Apellido": "Mullis",
+			"Carrera": "Sistemas",
+			"Password": "NGlDZFpvgf"
+		},
+		{
+			"Carnet": 201565596,
+			"Nombre": "Melony",
+			"Apellido": "Lambdean",
+			"Carrera": "Sistemas",
+			"Password": "TIbM1YPQ"
+		},
+		{
+			"Carnet": 201565597,
+			"Nombre": "Tully",
+			"Apellido": "Bleue",
+			"Carrera": "Sistemas",
+			"Password": "6gOOpOf"
+		},
+		{
+			"Carnet": 201565598,
+			"Nombre": "Ashlen",
+			"Apellido": "Cuddy",
+			"Carrera": "Sistemas",
+			"Password": "vNAFQEF1M"
+		},
+		{
+			"Carnet": 201565599,
+			"Nombre": "Blayne",
+			"Apellido": "Antic",
+			"Carrera": "Sistemas",
+			"Password": "63NwOj"
+		}
+	]
+}

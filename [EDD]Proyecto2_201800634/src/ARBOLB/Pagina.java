@@ -5,6 +5,8 @@
  */
 package ARBOLB;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Home
@@ -133,7 +135,7 @@ public class Pagina {
 
     public void Ordenar_HijoIzq() {
         if (this.VacioHijos()) {
-            
+
         } else {
             Ordenar_HijoIzq();
 
@@ -262,13 +264,27 @@ public class Pagina {
         return false;
     }
 
+    public void Lista_Llave(LinkedList<Llave> _Llave) {
+        for (int i = 0; i < this.getK(); i++) {
+            if (this.getLlave()[i] != null) {
+                _Llave.add(this.getLlave()[i]);
+            }
+        }
+        if (!VacioHijos()) {
+
+            for (int i = 0; i <= this.getK(); i++) {
+                this.getHijos()[i].Lista_Llave(_Llave);
+            }
+        }
+    }
+
     public String GenerarDot() {
         StringBuilder b = new StringBuilder();
 
         b.append(getDotName());
         b.append("[label=\"<P0>");
         for (int i = 0; i < this.getK(); i++) {
-            
+
             b.append("|" + this.getLlave()[i].toString());
             b.append("|<P" + (i + 1) + ">");
         }

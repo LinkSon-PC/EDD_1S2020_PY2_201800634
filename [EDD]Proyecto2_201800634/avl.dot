@@ -1,30 +1,30 @@
-digraph G { style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]Nodo37217146[label="Informativos
+digraph G { style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]Nodo508130170[label="Informativos
 0 "] 
-Nodo37217146->Nodo827236180
-Nodo827236180[label="Consulta
+Nodo508130170->Nodo1104474126
+Nodo1104474126[label="Consulta
 0 "] 
-Nodo827236180->Nodo1944141161
-Nodo1944141161[label="Biografia
+Nodo1104474126->Nodo152587886
+Nodo152587886[label="Biografia
 0 "] 
-Nodo827236180->Nodo1320256250
-Nodo1320256250[label="Ensayo
+Nodo1104474126->Nodo695426865
+Nodo695426865[label="Ensayo
 0 "] 
-Nodo1320256250->Nodo1939899493
-Nodo1939899493[label="Drama
+Nodo695426865->Nodo2087992262
+Nodo2087992262[label="Drama
 0 "] 
-Nodo37217146->Nodo919671162
-Nodo919671162[label="Lírico
+Nodo508130170->Nodo440852678
+Nodo440852678[label="Lírico
 0 "] 
-Nodo919671162->Nodo1285646524
-Nodo1285646524[label="Literatura
+Nodo440852678->Nodo1374074590
+Nodo1374074590[label="Literatura
 0 "] 
-Nodo919671162->Nodo239441280
-Nodo239441280[label="Sagas
+Nodo440852678->Nodo1650454788
+Nodo1650454788[label="Sagas
 0 "] 
-Nodo239441280->Nodo2033302401
-Nodo2033302401[label="Revista
+Nodo1650454788->Nodo1059605634
+Nodo1059605634[label="Revista
 0 "] 
-Nodo239441280->Nodo1205157660
-Nodo1205157660[label="Épico
+Nodo1650454788->Nodo306568049
+Nodo306568049[label="Épico
 0 "] 
 }
