@@ -15,7 +15,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class Usuario {
 
-    private int Carnet;
+    private long Carnet;
     private String Nombre;
     private String Apellido;
     private String Carrera;
@@ -26,7 +26,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int Carnet, String Nombre, String Apellido, String Carrera, String Password) {
+    public Usuario(long Carnet, String Nombre, String Apellido, String Carrera, String Password) {
         this.Carnet = Carnet;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -58,14 +58,14 @@ public class Usuario {
     /**
      * @return the Carnet
      */
-    public int getCarnet() {
+    public long getCarnet() {
         return Carnet;
     }
 
     /**
      * @param Carnet the Carnet to set
      */
-    public void setCarnet(int Carnet) {
+    public void setCarnet(long Carnet) {
         this.Carnet = Carnet;
     }
 
