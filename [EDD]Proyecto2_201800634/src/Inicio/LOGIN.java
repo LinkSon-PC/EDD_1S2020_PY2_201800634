@@ -135,24 +135,24 @@ public class LOGIN extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//        try {
-//            Sesion._User = Sesion._TablaHash.Buscar_Usuario(Long.parseLong(user.getText()));
-//            if (Sesion._User != null) {
-//                if (Sesion._User.getPassword().compareTo(pass.getText()) == 0) {
-//                    _cUsuario user = new _cUsuario();
-//                    user.setVisible(true);
-//                    this.dispose();
-//                } else {
-//                    Sesion._User = null;
-//                }
-//            } else {
-//                JOptionPane.showMessageDialog(null, "CARNET NO ENCOTRADO", "AVISO", JOptionPane.INFORMATION_MESSAGE);
-//            }
-//        } catch (Exception e) {
-//        }
+        try {
+            Sesion._User = Sesion._TablaHash.Buscar_Usuario(Long.parseLong(user.getText()));
+            if (Sesion._User != null) {
+                if (Sesion._User.getPassword().compareTo(pass.getText()) == 0) {
+                    _cUsuario user = new _cUsuario();
+                    user.setVisible(true);
+                    this.dispose();
+                } else {
+                    Sesion._User = null;
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "CARNET NO ENCOTRADO", "AVISO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+        }
 
-        _cUsuario user=new _cUsuario();
-            user.setVisible(true);
+//        _cUsuario user=new _cUsuario();
+//            user.setVisible(true);
 //            this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

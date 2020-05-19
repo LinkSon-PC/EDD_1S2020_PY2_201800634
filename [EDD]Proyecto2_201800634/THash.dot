@@ -1,42 +1,34 @@
 digraph G { rankdir = LR; 
- node[shape=Msquare  color = darkslategray text=white gradientangle=90];Nodo603139460[label =" Modulo 1"] 
-subgraph cluster_603139460 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1399016348[label="201503476
+ node[shape=Msquare  color = darkslategray text=white gradientangle=90];Nodo2037666881[label =" Modulo 1"] 
+subgraph cluster_2037666881 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+708339470[label="201503476
 Ricardo
 Cutz
 Ingenieria en Sistemas
 e10adc3949ba59abbe56e057f20f883e"]
-}Nodo603139460->1399016348
-Nodo1750493679[label =" Modulo 2"] 
-subgraph cluster_1750493679 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2024634603[label="201503477
+}Nodo2037666881->708339470
+Nodo889089265[label =" Modulo 2"] 
+subgraph cluster_889089265 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+784698553[label="201503477
 Juanito
 Hernandez
 Ingenieria Civil
 e10adc3949ba59abbe56e057f20f883e"]
-}Nodo1750493679->2024634603
-Nodo1116267895[label =" Modulo 23"] 
-subgraph cluster_1116267895 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-192833809[label="202005878
+}Nodo889089265->784698553
+Nodo1967653756[label =" Modulo 23"] 
+subgraph cluster_1967653756 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+471931596[label="202005878
 Antonio
 Hernandez
 Ingenieria Electrica
 e10adc3949ba59abbe56e057f20f883e"]
-}Nodo1116267895->192833809
-Nodo1354522752[label =" Modulo 24"] 
-subgraph cluster_1354522752 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1136996444[label="201800634
-ANTHONY
-SON MUX
+}Nodo1967653756->471931596
+Nodo1543464029[label =" Modulo 24"] 
+subgraph cluster_1543464029 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+1499302879[label="201800634
+Anthony
+Son
 Ingenieria en Sistemas
-2de68a7c5e3db6a836ab8f5f109416b8"]
-}Nodo1354522752->1136996444
-Nodo846214789[label =" Modulo 39"] 
-subgraph cluster_846214789 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2130165664[label="2433234
-FSDF
-23442AFDF
-Ingenieria en Sistemas
-4e40eda5ffc5372e281609306224d639"]
-}Nodo846214789->2130165664
+e10adc3949ba59abbe56e057f20f883e"]
+}Nodo1543464029->1499302879
 } 

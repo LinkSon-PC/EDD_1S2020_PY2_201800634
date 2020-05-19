@@ -1,0 +1,21 @@
+digraph G {    rankdir = LR;  style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]Nodo1138594563[label="Biografia
+201800634 "] 
+Nodo1807105002[label="Consulta
+201800634 "] 
+Nodo1835095201[label="Drama
+201800634 "] 
+Nodo74980125[label="Ensayo
+201800634 "] 
+Nodo730357516[label="Informativos
+201800634 "] 
+Nodo406356990[label="Literatura
+201800634 "] 
+Nodo936532876[label="Lírico
+201800634 "] 
+Nodo1006588001[label="Revista
+201800634 "] 
+Nodo1549587223[label="Sagas
+201800634 "] 
+Nodo517239465[label="Épico
+201800634 "] 
+}

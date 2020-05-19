@@ -37,24 +37,94 @@ public class Nodo {
     public String GenerarDot() {
         StringBuilder b = new StringBuilder();
 
+        b.append(Avl(this,""));
+
+        return b.toString();
+
+    }
+    public String GenerarPreOrder() {
+        StringBuilder b = new StringBuilder();
+
+        b.append(PreOrder(this,""));
+
+        return b.toString();
+
+    }
+    public String GenerarInOrder() {
+        StringBuilder b = new StringBuilder();
+
         b.append(InOrder(this,""));
 
         return b.toString();
 
     }
+    public String GenerarPostOrder() {
+        StringBuilder b = new StringBuilder();
 
-    public String InOrder(Nodo _Nodo, String _Dot) {
+        b.append(PostOrder(this,""));
+
+        return b.toString();
+
+    }
+
+    private String Avl(Nodo _Nodo, String _Dot) {
         if (_Nodo != null) {
             String aux="";
             aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() +"\n"+ _Nodo.getCarnet() + " \"] \n";
             if (_Nodo.getIzquierdo() != null) {
                 aux += _Nodo.getDotName() + "->" + _Nodo.getIzquierdo().getDotName() + "\n";
-                aux +=InOrder(_Nodo.getIzquierdo(), aux);
+                aux +=Avl(_Nodo.getIzquierdo(), aux);
             }
             if (_Nodo.getDerecho()!= null) {
                 aux += _Nodo.getDotName() + "->" + _Nodo.getDerecho().getDotName() + "\n";
+                aux +=Avl(_Nodo.getDerecho(), aux);
+            }
+            return aux;
+        }
+        return "";
+    }
+    
+    private String PreOrder(Nodo _Nodo, String _Dot){
+        
+        if (_Nodo != null) {
+            String aux="";
+            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() +"\n"+ _Nodo.getCarnet() + " \"] \n";
+            if (_Nodo.getIzquierdo() != null) {
+                aux +=PreOrder(_Nodo.getIzquierdo(), aux);
+            }
+            if (_Nodo.getDerecho()!= null) {
+                aux +=PreOrder(_Nodo.getDerecho(), aux);
+            }
+            return aux;
+        }
+        return "";
+    }
+    private String InOrder(Nodo _Nodo, String _Dot){
+        
+        if (_Nodo != null) {
+            String aux="";
+            if (_Nodo.getIzquierdo() != null) {
+                aux +=InOrder(_Nodo.getIzquierdo(), aux);
+            }
+            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() +"\n"+ _Nodo.getCarnet() + " \"] \n";
+            if (_Nodo.getDerecho()!= null) {
                 aux +=InOrder(_Nodo.getDerecho(), aux);
             }
+            return aux;
+        }
+        return "";
+    }
+    private String PostOrder(Nodo _Nodo, String _Dot){
+        
+        if (_Nodo != null) {
+            String aux="";
+            if (_Nodo.getIzquierdo() != null) {
+                aux +=PostOrder(_Nodo.getIzquierdo(), aux);
+            }
+            if (_Nodo.getDerecho()!= null) {
+                aux +=PostOrder(_Nodo.getDerecho(), aux);
+            }
+            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() +"\n"+ _Nodo.getCarnet() + " \"] \n";
             return aux;
         }
         return "";

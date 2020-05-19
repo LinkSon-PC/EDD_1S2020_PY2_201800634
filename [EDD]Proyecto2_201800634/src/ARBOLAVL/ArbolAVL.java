@@ -348,6 +348,54 @@ public class ArbolAVL {
 
         return b.toString();
     }
+    private String toPreOrder() {
+        StringBuilder b = new StringBuilder();
+
+        b.append("digraph G {    rankdir = LR;  style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]");
+
+        if (this.raiz != null) {
+            b.append(raiz.GenerarPreOrder());
+
+        } else {
+            System.out.println("ARBOL VACÍO");
+        }
+
+        b.append("}");
+
+        return b.toString();
+    }
+    private String toInOrder() {
+        StringBuilder b = new StringBuilder();
+
+        b.append("digraph G {    rankdir = LR;  style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]");
+
+        if (this.raiz != null) {
+            b.append(raiz.GenerarInOrder());
+
+        } else {
+            System.out.println("ARBOL VACÍO");
+        }
+
+        b.append("}");
+
+        return b.toString();
+    }
+    private String toPostOrder() {
+        StringBuilder b = new StringBuilder();
+
+        b.append("digraph G {     rankdir = LR;  style = filled; bgcolor = white; color = lightgrey; node[shape=box3d, style = filled]");
+
+        if (this.raiz != null) {
+            b.append(raiz.GenerarPostOrder());
+
+        } else {
+            System.out.println("ARBOL VACÍO");
+        }
+
+        b.append("}");
+
+        return b.toString();
+    }
 
     public void GenerarDot() {
         String directorio = System.getProperty("user.dir");
@@ -359,6 +407,192 @@ public class ArbolAVL {
             FileWriter f = new FileWriter(_Dot);
 
             f.write(toDot());
+
+            f.close();
+
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                // TODO: Add catch code
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+        try {
+
+            String[] cmd = new String[5];
+            cmd[0] = "dot";
+            cmd[1] = "-Tjpg";
+            cmd[2] = _Dot;
+            cmd[3] = "-o";
+            cmd[4] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+        }
+
+        try {
+
+            String[] cmd = new String[4];
+            cmd[0] = "cmd";
+            cmd[1] = "/C";
+            cmd[2] = "start";
+            cmd[3] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+    }
+
+    public void GenerarPreOrder() {
+        String directorio = System.getProperty("user.dir");
+
+        String _Dot = directorio + "\\avlPre.dot";
+        String _Img = directorio + "\\avlPre.jpg";
+        try {
+
+            FileWriter f = new FileWriter(_Dot);
+
+            f.write(toPreOrder());
+
+            f.close();
+
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                // TODO: Add catch code
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+        try {
+
+            String[] cmd = new String[5];
+            cmd[0] = "dot";
+            cmd[1] = "-Tjpg";
+            cmd[2] = _Dot;
+            cmd[3] = "-o";
+            cmd[4] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+        }
+
+        try {
+
+            String[] cmd = new String[4];
+            cmd[0] = "cmd";
+            cmd[1] = "/C";
+            cmd[2] = "start";
+            cmd[3] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+    }
+
+    public void GenerarInOrder() {
+        String directorio = System.getProperty("user.dir");
+
+        String _Dot = directorio + "\\avlIn.dot";
+        String _Img = directorio + "\\avlIn.jpg";
+        try {
+
+            FileWriter f = new FileWriter(_Dot);
+
+            f.write(toInOrder());
+
+            f.close();
+
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                // TODO: Add catch code
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+        try {
+
+            String[] cmd = new String[5];
+            cmd[0] = "dot";
+            cmd[1] = "-Tjpg";
+            cmd[2] = _Dot;
+            cmd[3] = "-o";
+            cmd[4] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+        }
+
+        try {
+
+            String[] cmd = new String[4];
+            cmd[0] = "cmd";
+            cmd[1] = "/C";
+            cmd[2] = "start";
+            cmd[3] = _Img;
+
+            Runtime rt = Runtime.getRuntime();
+
+            rt.exec(cmd);
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+    }
+
+    public void GenerarPostOrder() {
+        String directorio = System.getProperty("user.dir");
+
+        String _Dot = directorio + "\\avlPost.dot";
+        String _Img = directorio + "\\avlPost.jpg";
+        try {
+
+            FileWriter f = new FileWriter(_Dot);
+
+            f.write(toPostOrder());
 
             f.close();
 
