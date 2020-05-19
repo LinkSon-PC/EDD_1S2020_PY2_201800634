@@ -5,6 +5,8 @@
  */
 package ARBOLAVL;
 
+import ARBOLB.ArbolB;
+
 /**
  *
  * @author Home
@@ -12,13 +14,17 @@ package ARBOLAVL;
 public class Nodo {
 
     private String Categoria;
+    private long Carnet;
+    private ArbolB ArbolB;
     private int FE;
     private Nodo izquierdo;
     private Nodo derecho;
 
     
-    public Nodo(String _Categoria) {
+    public Nodo(String _Categoria, long Carnet) {
         this.Categoria = _Categoria;
+        this.Carnet = Carnet;
+        this.ArbolB = new ArbolB();
         this.FE = 0;
         this.izquierdo = null;
         this.derecho = null;
@@ -40,7 +46,7 @@ public class Nodo {
     public String InOrder(Nodo _Nodo, String _Dot) {
         if (_Nodo != null) {
             String aux="";
-            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() + " \"] \n";
+            aux += _Nodo.getDotName() + "[label=\"" + _Nodo.getCategoria() +"\n"+ _Nodo.getCarnet() + " \"] \n";
             if (_Nodo.getIzquierdo() != null) {
                 aux += _Nodo.getDotName() + "->" + _Nodo.getIzquierdo().getDotName() + "\n";
                 aux +=InOrder(_Nodo.getIzquierdo(), aux);
@@ -114,6 +120,34 @@ public class Nodo {
      */
     public void setDerecho(Nodo derecho) {
         this.derecho = derecho;
+    }
+
+    /**
+     * @return the ArbolB
+     */
+    public ArbolB getArbolB() {
+        return ArbolB;
+    }
+
+    /**
+     * @param ArbolB the ArbolB to set
+     */
+    public void setArbolB(ArbolB ArbolB) {
+        this.ArbolB = ArbolB;
+    }
+
+    /**
+     * @return the Carnet
+     */
+    public long getCarnet() {
+        return Carnet;
+    }
+
+    /**
+     * @param Carnet the Carnet to set
+     */
+    public void setCarnet(long Carnet) {
+        this.Carnet = Carnet;
     }
 
 }

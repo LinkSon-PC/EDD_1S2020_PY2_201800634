@@ -1,134 +1,34 @@
-digraph G { 
- node[shape=Msquare  color = darkslategray text=white gradientangle=90];Nodo807674215[label =" Modulo 0"] 
-subgraph cluster_807674215 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-466313719[label="Prueba15,405"]
-}Nodo807674215->466313719
-Nodo565478575[label =" Modulo 3"] 
-subgraph cluster_565478575 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1751652122[label="Prueba21,48"]
-}Nodo565478575->1751652122
-Nodo2044079209[label =" Modulo 4"] 
-subgraph cluster_2044079209 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-970075773[label="Prueba8,184"]
-970075773->1011237908
-1011237908[label="Prueba35,4"]
-}Nodo2044079209->970075773
-Nodo348017729[label =" Modulo 7"] 
-subgraph cluster_348017729 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1547929563[label="Prueba16,232"]
-}Nodo348017729->1547929563
-Nodo1951067112[label =" Modulo 9"] 
-subgraph cluster_1951067112 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2049079185[label="Prueba5,9"]
-2049079185->483928264
-483928264[label="Prueba26,234"]
-483928264->1558514135
-1558514135[label="Prueba29,9"]
-}Nodo1951067112->2049079185
-Nodo2136194056[label =" Modulo 10"] 
-subgraph cluster_2136194056 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-371507852[label="Prueba6,235"]
-371507852->1265055464
-1265055464[label="Prueba28,55"]
-}Nodo2136194056->371507852
-Nodo1069037026[label =" Modulo 13"] 
-subgraph cluster_1069037026 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1567190497[label="Prueba12,193"]
-}Nodo1069037026->1567190497
-Nodo1835656290[label =" Modulo 14"] 
-subgraph cluster_1835656290 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-525033297[label="Prueba2,239"]
-}Nodo1835656290->525033297
-Nodo1629646463[label =" Modulo 16"] 
-subgraph cluster_1629646463 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2008154591[label="Prueba17,421"]
-}Nodo1629646463->2008154591
-Nodo1432003007[label =" Modulo 17"] 
-subgraph cluster_1432003007 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-279891346[label="Prueba11,17"]
-279891346->1653409902
-1653409902[label="Prueba20,107"]
-}Nodo1432003007->279891346
-Nodo89538841[label =" Modulo 18"] 
-subgraph cluster_89538841 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-92360533[label="Prueba10,198"]
-92360533->1663418410
-1663418410[label="Prueba18,423"]
-1663418410->1776380504
-1776380504[label="Prueba30,153"]
-}Nodo89538841->92360533
-Nodo1577623796[label =" Modulo 20"] 
-subgraph cluster_1577623796 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1367127943[label="Prueba31,425"]
-}Nodo1577623796->1367127943
-Nodo479533330[label =" Modulo 21"] 
-subgraph cluster_479533330 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2126775154[label="Prueba33,201"]
-}Nodo479533330->2126775154
-Nodo1708135262[label =" Modulo 23"] 
-subgraph cluster_1708135262 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1361330412[label="Prueba19,473"]
-}Nodo1708135262->1361330412
-Nodo1707970131[label =" Modulo 26"] 
-subgraph cluster_1707970131 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1003277835[label="Prueba36,251"]
-}Nodo1707970131->1003277835
-Nodo1591963855[label =" Modulo 28"] 
-subgraph cluster_1591963855 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-758343903[label="Prueba22,253"]
-758343903->612746300
-612746300[label="Prueba27,163"]
-}Nodo1591963855->758343903
-Nodo2045045297[label =" Modulo 29"] 
-subgraph cluster_2045045297 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1011128522[label="Prueba32,119"]
-}Nodo2045045297->1011128522
-Nodo176650765[label =" Modulo 31"] 
-subgraph cluster_176650765 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2747205[label="Prueba1,121"]
-2747205->1581394963
-1581394963[label="Prueba4,31"]
-}Nodo176650765->2747205
-Nodo1188589017[label =" Modulo 32"] 
-subgraph cluster_1188589017 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2000560157[label="Prueba7,122"]
-}Nodo1188589017->2000560157
-Nodo948080252[label =" Modulo 33"] 
-subgraph cluster_948080252 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-2012159947[label="Prueba3,438"]
-2012159947->1927021130
-1927021130[label="Prueba38,213"]
-}Nodo948080252->2012159947
-Nodo1961159364[label =" Modulo 35"] 
-subgraph cluster_1961159364 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1480158026[label="Prueba14,35"]
-1480158026->1462183617
-1462183617[label="Prueba24,35"]
-1462183617->1174118461
-1174118461[label="Prueba39,260"]
-}Nodo1961159364->1480158026
-Nodo379240588[label =" Modulo 38"] 
-subgraph cluster_379240588 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-99260974[label="Prueba9,173"]
-99260974->1796580732
-1796580732[label="Prueba25,488"]
-}Nodo379240588->99260974
-Nodo1945569899[label =" Modulo 41"] 
-subgraph cluster_1945569899 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-866724409[label="Prueba37,446"]
-}Nodo1945569899->866724409
-Nodo1657011592[label =" Modulo 42"] 
-subgraph cluster_1657011592 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-616270569[label="Prueba23,177"]
-616270569->1867806791
-1867806791[label="Prueba34,132"]
-}Nodo1657011592->616270569
-Nodo366374774[label =" Modulo 43"] 
-subgraph cluster_366374774 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1753546745[label="Prueba13,448"]
-}Nodo366374774->1753546745
-Nodo277929154[label =" Modulo 44"] 
-subgraph cluster_277929154 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
-1556748503[label="Prueba0,404"]
-}Nodo277929154->1556748503
+digraph G { rankdir = LR; 
+ node[shape=Msquare  color = darkslategray text=white gradientangle=90];Nodo1081251889[label =" Modulo 1"] 
+subgraph cluster_1081251889 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+349118759[label="201503476
+Ricardo
+Cutz
+Ingenieria en Sistemas
+e10adc3949ba59abbe56e057f20f883e"]
+}Nodo1081251889->349118759
+Nodo2045363022[label =" Modulo 2"] 
+subgraph cluster_2045363022 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+556479056[label="201503477
+Juanito
+Hernandez
+Ingenieria Civil
+e10adc3949ba59abbe56e057f20f883e"]
+}Nodo2045363022->556479056
+Nodo1967953236[label =" Modulo 23"] 
+subgraph cluster_1967953236 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+409425091[label="202005878
+Antonio
+Hernandez
+Ingenieria Electrica
+e10adc3949ba59abbe56e057f20f883e"]
+}Nodo1967953236->409425091
+Nodo790828850[label =" Modulo 24"] 
+subgraph cluster_790828850 {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; 
+1474431284[label="201800634
+Anthony
+Son
+Ingenieria en Sistemas
+e10adc3949ba59abbe56e057f20f883e"]
+}Nodo790828850->1474431284
 } 

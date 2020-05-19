@@ -12,6 +12,7 @@ import java.io.FileWriter;
  * @author Home
  */
 public class THASH {
+    public static Usuario _User;
     private LSUsuarios[] TablaHash;
 
     public THASH() {
@@ -39,11 +40,26 @@ public class THASH {
         }
     }
     
+    public Usuario Buscar_Usuario(long _Carnet){
+        
+        long _hash = _Carnet % 45;
+        if (TablaHash[(int)_hash]!=null) {
+            Usuario _aux=TablaHash[(int)_hash].primero;
+            while (_aux!=null) {
+                if (_aux.getCarnet()==_Carnet) {
+                    return _aux;
+                }
+                _aux=_aux.getSiguiente();
+            }
+        }
+        return null;
+    }
+    
     
     private String toDot() {
         StringBuilder b = new StringBuilder();
 
-        b.append("digraph G { \n");
+        b.append("digraph G { rankdir = LR; \n");
         b.append(" node[shape=Msquare  color = darkslategray text=white gradientangle=90];");
 
         for (int i = 0; i < TablaHash.length; i++) {

@@ -1,5 +1,12 @@
 {
-	"Usuarios":[
+	"Usuarios": [
+		{
+			"Carnet": 201800634,
+			"Nombre": "Anthony",
+			"Apellido": "Son",
+			"Carrera": "Ingenieria en Sistemas",
+			"Password": "123456"
+		},
 		{
 			"Carnet": 201503476,
 			"Nombre": "Ricardo",

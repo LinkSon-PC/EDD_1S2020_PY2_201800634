@@ -6,6 +6,7 @@
  */
 package ARBOLAVL;
 
+import ARBOLB.Llave;
 import java.io.FileWriter;
 
 /**
@@ -22,34 +23,50 @@ public class ArbolAVL {
 
     public Nodo Buscar(String _Categoria, Nodo _Nodo) {
         if (_Nodo != null) {
-            switch (_Nodo.getCategoria().compareToIgnoreCase(_Categoria)) {
-                case 1:
-                    return Buscar(_Categoria, _Nodo.getDerecho());
-                case -1:
-                    return Buscar(_Categoria, _Nodo.getIzquierdo());
-                default:
-                    return _Nodo;
+            if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
+                return Buscar(_Categoria, _Nodo.getDerecho());
+            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
+                return Buscar(_Categoria, _Nodo.getIzquierdo());
+            } else {
+                return _Nodo;
             }
         }
         System.out.println("CATEGORÍA NO ENCONTRADA");
         return null;
     }
 
-    public void Insertar(String _Categoria) {
-        if (this.raiz == null) {
-            this.raiz = new Nodo(_Categoria);
-        } else {
-            this.raiz = InsertarAVL(_Categoria, getRaiz());
+    public void AgregarLibro(String _Categoria, Llave _Llave) {
+        AgregarLibro_ArbolB(_Categoria, this.raiz, _Llave);
+    }
+
+    private void AgregarLibro_ArbolB(String _Categoria, Nodo _Nodo, Llave _Llave) {
+        if (_Nodo != null) {
+            if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
+                AgregarLibro_ArbolB(_Categoria, _Nodo.getDerecho(), _Llave);
+            } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
+                AgregarLibro_ArbolB(_Categoria, _Nodo.getIzquierdo(), _Llave);
+            } else {
+                System.out.println("LIBRO INGRESADO EN :" + _Nodo.getCategoria());
+                _Nodo.getArbolB().Agregar(_Llave);
+            }
         }
     }
 
-    private Nodo InsertarAVL(String _Categoria, Nodo _Nodo) {
-        Nodo _Aux = _Nodo, _Nuevo = new Nodo(_Categoria);
+    public void Insertar(String _Categoria, long _Carnet) {
+        if (this.raiz == null) {
+            this.raiz = new Nodo(_Categoria, _Carnet);
+        } else {
+            this.raiz = InsertarAVL(_Categoria, _Carnet, getRaiz());
+        }
+    }
+
+    private Nodo InsertarAVL(String _Categoria, long _Carnet, Nodo _Nodo) {
+        Nodo _Aux = _Nodo;
         if (_Nodo != null) {
 
             if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) > 0) {
 //                System.out.println("NODO 1");
-                _Nodo.setDerecho(InsertarAVL(_Categoria, _Nodo.getDerecho()));
+                _Nodo.setDerecho(InsertarAVL(_Categoria, _Carnet, _Nodo.getDerecho()));
                 if ((Obtener_FE(_Nodo.getDerecho()) - Obtener_FE(_Nodo.getIzquierdo())) == 2) {
 
                     if (_Categoria.compareToIgnoreCase(_Nodo.getDerecho().getCategoria()) > 0) {
@@ -62,7 +79,7 @@ public class ArbolAVL {
             } else if (_Categoria.compareToIgnoreCase(_Nodo.getCategoria()) < 0) {
 
 //                System.out.println("NODO -1");
-                _Nodo.setIzquierdo(InsertarAVL(_Categoria, _Nodo.getIzquierdo()));
+                _Nodo.setIzquierdo(InsertarAVL(_Categoria, _Carnet, _Nodo.getIzquierdo()));
                 if ((Obtener_FE(_Nodo.getIzquierdo()) - Obtener_FE(_Nodo.getDerecho())) == 2) {
 
                     if (_Categoria.compareToIgnoreCase(_Nodo.getIzquierdo().getCategoria()) < 0) {
@@ -72,7 +89,7 @@ public class ArbolAVL {
                     }
                 }
             } else {
-                System.out.println("NODO REPETIDO");
+//                System.out.println("NODO REPETIDO");
                 return _Nodo;
             }
 
@@ -86,7 +103,7 @@ public class ArbolAVL {
 
             return _Aux;
         }
-
+        Nodo _Nuevo = new Nodo(_Categoria, _Carnet);
         _Nuevo.setFE(Math.max(Obtener_FE(_Nuevo.getIzquierdo()), Obtener_FE(_Nuevo.getDerecho())) + 1);
         return _Nuevo;
     }
@@ -118,16 +135,14 @@ public class ArbolAVL {
                             } else {
                                 _Aux = Mayor_Izquierda(_Nodo.getIzquierdo().getDerecho());
                             }
-                            
+
                             _Aux.setIzquierdo(_Nodo.getIzquierdo());
                         }
                         _Aux.setDerecho(_Nodo.getDerecho());
-                        
-                        
-                    } else 
-                        if (_Nodo.getDerecho() != null) {
 
-                        if (_Nodo.getDerecho().getIzquierdo()== null) {
+                    } else if (_Nodo.getDerecho() != null) {
+
+                        if (_Nodo.getDerecho().getIzquierdo() == null) {
                             _Aux = _Nodo.getDerecho();
                         } else {
 
@@ -137,7 +152,7 @@ public class ArbolAVL {
                             } else {
                                 _Aux = Menor_Derecha(_Nodo.getDerecho().getIzquierdo());
                             }
-                            
+
                             _Aux.setDerecho(_Nodo.getDerecho());
                         }
                         _Aux.setIzquierdo(_Nodo.getIzquierdo());
@@ -197,13 +212,12 @@ public class ArbolAVL {
         return _Aux;
     }
 
-    
-    private Nodo Menor_Derecha(Nodo _Nodo){
+    private Nodo Menor_Derecha(Nodo _Nodo) {
         Nodo _Aux = _Nodo;
 
         if (_Nodo.getIzquierdo() == null && _Nodo.getDerecho() != null) {
             _Nodo = _Nodo.getIzquierdo();
-        } else if (_Nodo.getIzquierdo()!= null) {
+        } else if (_Nodo.getIzquierdo() != null) {
             if (_Nodo.getIzquierdo().NoHijos()) {
                 _Aux = _Nodo.getIzquierdo();
                 _Nodo.setIzquierdo(null);
@@ -221,7 +235,7 @@ public class ArbolAVL {
         }
         return _Aux;
     }
-    
+
     private Nodo Reajustar(Nodo _Nodo) {
         Nodo _Aux = _Nodo;
 

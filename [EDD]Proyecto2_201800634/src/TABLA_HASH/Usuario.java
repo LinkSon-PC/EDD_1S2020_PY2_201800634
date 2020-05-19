@@ -5,11 +5,16 @@
  */
 package TABLA_HASH;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  *
  * @author Home
  */
 public class Usuario {
+
     private int Carnet;
     private String Nombre;
     private String Apellido;
@@ -17,7 +22,7 @@ public class Usuario {
     private String Password;
 
     private Usuario Siguiente;
-    
+
     public Usuario() {
     }
 
@@ -28,6 +33,26 @@ public class Usuario {
         this.Carrera = Carrera;
         this.Password = Password;
         this.Siguiente = null;
+    }
+
+    public String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public String getString(){
+        return this.Carnet +"\n"+ this.Nombre + "\n" + this.Apellido + "\n" + this.Carrera + "\n" + getMD5(this.Password);
     }
 
     /**
@@ -43,8 +68,7 @@ public class Usuario {
     public void setCarnet(int Carnet) {
         this.Carnet = Carnet;
     }
-    
-    
+
     public String getDotName() {
         return "Nodo" + this.hashCode();
     }
@@ -118,6 +142,5 @@ public class Usuario {
     public void setSiguiente(Usuario Siguiente) {
         this.Siguiente = Siguiente;
     }
-    
-    
+
 }

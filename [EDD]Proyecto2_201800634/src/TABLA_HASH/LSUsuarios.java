@@ -47,7 +47,7 @@ public class LSUsuarios {
         lista.append("subgraph cluster_"+this.hashCode()+" {  node[shape=Msquare  color = darkslategray text=white gradientangle=90]; \n");
         while (_aux != null) {
 
-            lista.append(_aux.hashCode() + "[label=\"" + _aux.getNombre() + "," + _aux.getCarnet() + "\"]\n");
+            lista.append(_aux.hashCode() + "[label=\"" + _aux.getString() + "\"]\n");
             
             if (_aux.getSiguiente() != null) {
                 lista.append(_aux.hashCode() + "->" + _aux.getSiguiente().hashCode() +  "\n");

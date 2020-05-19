@@ -34,7 +34,7 @@ public class ArbolB {
 
         //SI EL NODO RAIZ SUPERA EL LÍMITE
         if (AgregarLlave(_Pagina, _Libro)) {
-            System.out.println("INCREMENTO DE NIVEL");
+//            System.out.println("INCREMENTO DE NIVEL");
 
             //NUEVO NODO RAIZ
             Pagina _NuevoRaiz = new Pagina();
@@ -86,7 +86,7 @@ public class ArbolB {
         else {
 
             //SI ES MENOR QUE LA PRIMERA LLAVE INSERTAR EN EL     PRIMER HIJO
-            if (_Pagina.getLlave()[0].MayorQue(_Libro.getISBM())) {
+            if (_Pagina.getLlave()[0].MayorQue(_Libro.getISBN())) {
                 if (AgregarLlave(_Pagina.getHijos()[0], _Libro)) {
                     _Pagina.SepararPagina(0);
                     if (_Pagina.getK() >= 5) {
@@ -95,7 +95,7 @@ public class ArbolB {
                 }
                 return false;
             } //SI ES MAYOR QUE LA ULTIMA LLAVE INSERTADA  INSERTAR EN EL ULTIMO HIJO DISPONIBLE
-            else if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Libro.getISBM())) {
+            else if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Libro.getISBN())) {
                 if (AgregarLlave(_Pagina.getHijos()[_Pagina.getK()], _Libro)) {
                     _Pagina.SepararPagina(_Pagina.getK());
                     if (_Pagina.getK() >= 5) {
@@ -107,7 +107,7 @@ public class ArbolB {
 
                 //INSERTAR EN VALOR INTERMEDIO
                 for (int k = 0; k < _Pagina.getK() - 1; k++) {
-                    if (_Pagina.getLlave()[k].MenorQue(_Libro.getISBM()) && _Pagina.getLlave()[k + 1].MayorQue(_Libro.getISBM())) {
+                    if (_Pagina.getLlave()[k].MenorQue(_Libro.getISBN()) && _Pagina.getLlave()[k + 1].MayorQue(_Libro.getISBN())) {
 
                         if (AgregarLlave(_Pagina.getHijos()[k + 1], _Libro)) {
                             _Pagina.SepararPagina(k + 1);
@@ -117,7 +117,7 @@ public class ArbolB {
                         }
                         return false;
 
-                    } else if (_Pagina.getLlave()[k].IgualQue(_Libro.getISBM())) {
+                    } else if (_Pagina.getLlave()[k].IgualQue(_Libro.getISBN())) {
                         System.out.println("LIBRO YA REGISTRADO EN NODO");
                         return false;
                     }
@@ -129,20 +129,20 @@ public class ArbolB {
 
     }
 
-    public void Eliminar(int _ISBM) {
-        EliminarISBM(_ISBM, NodoRaíz);
+    public void Eliminar(int _ISBN) {
+        EliminarISBN(_ISBN, NodoRaíz);
         if (NodoRaíz.getK() == 0) {
             NodoRaíz = NodoRaíz.getHijos()[0];
             this.Altura--;
         }
     }
 
-    private void EliminarISBM(int _Valor, Pagina _Pagina) {
+    private void EliminarISBN(int _Valor, Pagina _Pagina) {
         //ELIMINAR EN NODO HOJA
         if (_Pagina.VacioHijos()) {
             for (int k = 0; k < _Pagina.getK(); k++) {
                 if (_Pagina.getLlave()[k].IgualQue(_Valor)) {
-                    System.out.println("ELIMINADO " + Integer.toString(_Pagina.getLlave()[k].getISBM()));
+                    System.out.println("ELIMINADO " + Long.toString(_Pagina.getLlave()[k].getISBN()));
 
                     for (int i = k; i < _Pagina.getK(); i++) {
                         _Pagina.getLlave()[i] = _Pagina.getLlave()[i + 1];
@@ -169,7 +169,7 @@ public class ArbolB {
                 }
                 
                 else if (_Pagina.getLlave()[k].MayorQue(_Valor)) {
-                    EliminarISBM(_Valor, _Pagina.getHijos()[k]);
+                    EliminarISBN(_Valor, _Pagina.getHijos()[k]);
 
                     if (_Pagina.getHijos()[k].getK() < 2) {
                     _Pagina.Rebalanceo_Hoja(k);
@@ -182,7 +182,7 @@ public class ArbolB {
             }
 
             if (_Pagina.getLlave()[_Pagina.getK() - 1].MenorQue(_Valor)) {
-                EliminarISBM(_Valor, _Pagina.getHijos()[_Pagina.getK()]);
+                EliminarISBN(_Valor, _Pagina.getHijos()[_Pagina.getK()]);
 
                 if (_Pagina.getHijos()[_Pagina.getK()].getK() < 2) {
                     _Pagina.Rebalanceo_Hoja(_Pagina.getK());
@@ -193,7 +193,7 @@ public class ArbolB {
 
             }
 
-            System.out.println("VALOR ISBM " + Integer.toString(_Valor) + " NO ENCONTRADO");
+            System.out.println("VALOR ISBN " + Integer.toString(_Valor) + " NO ENCONTRADO");
 
         }
 
@@ -261,8 +261,8 @@ public class ArbolB {
     public void GenerarDot() {
         String directorio = System.getProperty("user.dir");
 
-        String _Dot = directorio + "\\archivo.dot";
-        String _Img = directorio + "\\archivo.jpg";
+        String _Dot = directorio + "\\archivoB.dot";
+        String _Img = directorio + "\\archivoB.jpg";
         try {
 
             FileWriter f = new FileWriter(_Dot);

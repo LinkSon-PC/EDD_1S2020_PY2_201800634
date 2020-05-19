@@ -10,7 +10,7 @@ package ARBOLB;
  * @author Home
  */
 public class Llave {
-    private int ISBM;
+    private long ISBN;
     private String Título;
     private String Autor;
     private String Editorial;
@@ -18,13 +18,13 @@ public class Llave {
     private String Edición;
     private String Categoría;
     private String Idioma;
-    private int Carnet;
+    private long Carnet;
 
     public Llave() {
     }
 
-    public Llave(int ISBM, String Título, String Autor, String Editorial, int Anio, String Edición, String Categoría, String Idioma, int Carnet) {
-        this.ISBM = ISBM;
+    public Llave(long ISBN, String Título, String Autor, String Editorial, int Anio, String Edición, String Categoría, String Idioma, long Carnet) {
+        this.ISBN = ISBN;
         this.Título = Título;
         this.Autor = Autor;
         this.Editorial = Editorial;
@@ -37,14 +37,20 @@ public class Llave {
 
     
     
-    public boolean MenorQue(int _Valor){
-        return getISBM()<_Valor;
+    public boolean MenorQue(long _Valor){
+        return getISBN()<_Valor;
     }
-    public boolean MayorQue(int _Valor){
-        return getISBM()>_Valor;
+    public boolean MayorQue(long _Valor){
+        return getISBN()>_Valor;
     }
-    public boolean IgualQue(int _Valor){
-        return getISBM()==_Valor;
+    public boolean IgualQue(long _Valor){
+        return getISBN()==_Valor;
+    }
+    
+    public String toString(){
+        return this.ISBN + "\n" + this.Título +"\n"+ this.Categoría;
+//        return this.ISBN +" \n"+ this.Título + " \n"+ this.Autor +" \n"+ this.Editorial +" \n"
+//                + this.Anio +" \n"+ this.Edición +" \n"+ this.Categoría +"\n"+ this.Idioma +" \n"+ this.Carnet;
     }
     /**
      * @return the Título
@@ -147,7 +153,7 @@ public class Llave {
     /**
      * @return the Carnet
      */
-    public int getCarnet() {
+    public long getCarnet() {
         return Carnet;
     }
 
@@ -159,17 +165,17 @@ public class Llave {
     }
 
     /**
-     * @return the ISBM
+     * @return the ISBN
      */
-    public int getISBM() {
-        return ISBM;
+    public long getISBN() {
+        return ISBN;
     }
 
     /**
-     * @param ISBM the ISBM to set
+     * @param ISBN the ISBN to set
      */
-    public void setISBM(int ISBM) {
-        this.ISBM = ISBM;
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
     }
     
     

@@ -28,7 +28,7 @@ public class Pagina {
 
             if (this.getLlave()[k] != null) {
 
-                if (this.getLlave()[k].MayorQue(_Libro.getISBM())) {
+                if (this.getLlave()[k].MayorQue(_Libro.getISBN())) {
 
                     Llave temp, aux = _Libro;
 
@@ -41,8 +41,8 @@ public class Pagina {
                     this.setK(this.getK() + 1);
                     return;
 
-                } else if (this.getLlave()[k].IgualQue(_Libro.getISBM())) {
-                    System.out.println("ISBM YA REGISTRADO");
+                } else if (this.getLlave()[k].IgualQue(_Libro.getISBN())) {
+                    System.out.println("ISBN YA REGISTRADO");
                     return;
                 }
 
@@ -253,9 +253,9 @@ public class Pagina {
         System.out.println("REBALANCEO");
     }
 
-    private boolean Busca_Llave(int _ISBM) {
+    private boolean Busca_Llave(int _ISBN) {
         for (Llave llave : _Llave) {
-            if (llave.IgualQue(_ISBM)) {
+            if (llave.IgualQue(_ISBN)) {
                 return true;
             }
         }
@@ -269,7 +269,7 @@ public class Pagina {
         b.append("[label=\"<P0>");
         for (int i = 0; i < this.getK(); i++) {
             
-            b.append("|" + Integer.toString(this.getLlave()[i].getISBM()));
+            b.append("|" + this.getLlave()[i].toString());
             b.append("|<P" + (i + 1) + ">");
         }
 

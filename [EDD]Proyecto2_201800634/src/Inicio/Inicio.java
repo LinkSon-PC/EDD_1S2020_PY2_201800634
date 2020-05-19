@@ -157,9 +157,10 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             // TODO add your handling code here:
             
-            _cUsuario user=new _cUsuario();
-            user.setVisible(true);
+            LOGIN login=new LOGIN();
+            login.setVisible(true);
             this.dispose();
+            
                     
 //            try {
 
